@@ -6,178 +6,499 @@
     <title>Roderick (Rory) Lawrence Renwick - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .nav-divider {
+            height: 2px;
+            background: linear-gradient(to right, #3B82F6, #60A5FA);
+            margin: 0.5rem 0;
+        }
+        .download-list {
+            max-height: 200px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #3B82F6 #E5E7EB;
+        }
+        .download-list::-webkit-scrollbar {
+            width: 8px;
+        }
+        .download-list::-webkit-scrollbar-track {
+            background: #E5E7EB;
+            border-radius: 4px;
+        }
+        .download-list::-webkit-scrollbar-thumb {
+            background: #3B82F6;
+            border-radius: 4px;
+        }
+        .pdf-container {
+            height: 600px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: none;
+        }
+        .pdf-container.active {
+            display: block;
+        }
+        .resource-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .resource-header {
+            padding: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #f8fafc, #f1f5f9);
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .resource-header:hover {
+            background: linear-gradient(to right, #f1f5f9, #e2e8f0);
+        }
+        .resource-content {
+            padding: 1rem;
+            display: none;
+        }
+        .resource-content.active {
+            display: block;
+        }
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+        .chevron.active {
+            transform: rotate(180deg);
+        }
+        .image-container {
+            width: 100%;
+            margin: 1rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: none;
+        }
+        .image-container.active {
+            display: block;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .caption {
+            background: white;
+            padding: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .skill-category {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .skill-category h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a365d;
+        }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .skill-tag {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .skill-tag:hover {
+            transform: translateY(-2px);
+        }
+        .programming { background: #E3F2FD; color: #1565C0; }
+        .tools { background: #E8F5E9; color: #2E7D32; }
+        .frameworks { background: #FFF3E0; color: #E65100; }
+        .areas { background: #F3E5F5; color: #6A1B9A; }
+        
+        .coursework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .course-category {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .course-category h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a365d;
+        }
+        .course-list {
+            list-style: none;
+            padding: 0;
+        }
+        .course-item {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            background: #f8fafc;
+            transition: all 0.3s ease;
+        }
+        .course-item:hover {
+            background: #f1f5f9;
+            transform: translateX(5px);
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .profile-image {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #3B82F6;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            animation: rotate 1.5s linear infinite;
+        }
+        
+        .profile-image:hover {
+            border-color: #60A5FA;
+        }
+
+        .hero-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3B82F6;
+            box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.2);
+            animation: rotate 1.5s linear infinite;
+        }
+        
+        .hero-image:hover {
+            border-color: #60A5FA;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-lg fixed w-full z-10">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <div class="text-xl font-bold">RLR</div>
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3">
+                    <img src="im/image.png" alt="Profile" class="profile-image">
+                    <div class="text-2xl font-bold text-blue-600">RLR</div>
+                </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-blue-600">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-blue-600">About</a>
-                    <a href="#projects" class="text-gray-700 hover:text-blue-600">Projects</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+                    <a href="#home" class="text-gray-800 hover:text-blue-600 font-medium">Home</a>
+                    <a href="#about" class="text-gray-800 hover:text-blue-600 font-medium">About</a>
+                    <a href="#projects" class="text-gray-800 hover:text-blue-600 font-medium">Projects</a>
+                    <a href="#documents" class="text-gray-800 hover:text-blue-600 font-medium">Documents</a>
+                    <a href="#experiences" class="text-gray-800 hover:text-blue-600 font-medium">Experiences</a>
+                    <a href="#resources" class="text-gray-800 hover:text-blue-600 font-medium">Resources</a>
+                    <a href="#contact" class="text-gray-800 hover:text-blue-600 font-medium">Contact</a>
                 </div>
             </div>
+            <div class="nav-divider"></div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-20">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="text-center">
-                <img src="RemyFace.JPG" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-8 object-cover">
-                <h1 class="text-4xl font-bold text-gray-900 mb-4">Roderick (Rory) Lawrence Renwick</h1>
-                <p class="text-xl text-gray-600 mb-4">Computer Engineer</p>
-                <p class="text-lg text-gray-500 mb-8">Focusing on ML & CV Applications</p>
-                <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">Get in Touch</a>
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white pt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex flex-col items-center">
+                <img src="https://www.r0ry.com/images/remy_wgan-gp/remy_128x128_animation_1.gif" alt="Profile" class="hero-image mb-8">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">Roderick L. Renwick</h1>
+                <p class="text-xl text-gray-600 mb-8">Computer Engineering Student | ML Researcher | Hardware Designer</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition duration-300">Get in Touch</a>
+                    <a href="im/im_oldresume.png" download class="bg-white text-blue-600 px-8 py-3 rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition duration-300 flex items-center">
+                        <i class="fas fa-download mr-2"></i>
+                        Resume
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="bg-white py-20">
+    <section id="about" class="py-20 bg-gradient-to-b from-blue-50 to-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Education</h3>
-                    <ul class="space-y-4 text-gray-600 mb-8">
-                        <li>
-                            <p class="font-medium">MS in Electrical and Computer Engineering</p>
-                            <p>Purdue University</p>
-                            <p class="text-sm">Focus: Machine Learning & Computer Vision</p>
-                        </li>
-                        <li>
-                            <p class="font-medium">BSE in Computer Engineering</p>
-                            <p>University of Michigan - Dearborn</p>
-                            <p class="text-sm">Honors and Distinction</p>
-                        </li>
-                    </ul>
-
-                    <h3 class="text-xl font-semibold mb-4">Key Coursework</h3>
-                    <div class="grid grid-cols-2 gap-2 mb-8">
-                        <div class="bg-blue-50 px-3 py-2 rounded-lg">
-                            <p class="text-sm font-medium text-blue-800">Machine Learning</p>
-                        </div>
-                        <div class="bg-green-50 px-3 py-2 rounded-lg">
-                            <p class="text-sm font-medium text-green-800">Computer Vision</p>
-                        </div>
-                        <div class="bg-purple-50 px-3 py-2 rounded-lg">
-                            <p class="text-sm font-medium text-purple-800">Deep Learning</p>
-                        </div>
-                        <div class="bg-yellow-50 px-3 py-2 rounded-lg">
-                            <p class="text-sm font-medium text-yellow-800">AI & Robotics</p>
-                        </div>
-                        <div class="bg-red-50 px-3 py-2 rounded-lg">
-                            <p class="text-sm font-medium text-red-800">Embedded Systems</p>
-                        </div>
-                        <div class="bg-indigo-50 px-3 py-2 rounded-lg">
-                            <p class="text-sm font-medium text-indigo-800">Digital Signal Processing</p>
-                        </div>
-                    </div>
-
-                    <h3 class="text-xl font-semibold mb-4">Professional Experience</h3>
-                    <ul class="space-y-4 text-gray-600">
-                        <li>
-                            <p class="font-medium">ML Intern - Artificial Intelligence Lab</p>
-                            <p>Raytheon Technologies Research Center (RTRC)</p>
-                            <p class="text-sm">• Developed and implemented machine learning models for computer vision applications</p>
-                            <p class="text-sm">• Collaborated with research scientists on cutting-edge AI projects</p>
-                        </li>
-                        <li>
-                            <p class="font-medium">ML Research Assistant</p>
-                            <p>Michigan Dearborn Autonomous Shuttle (MDAS.ai)</p>
-                            <p class="text-sm">• Contributed to autonomous vehicle perception systems</p>
-                            <p class="text-sm">• Implemented computer vision algorithms for object detection</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4">Technical Skills</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="text-sm font-medium text-gray-700 mb-2">Programming Languages</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-blue-100 px-3 py-1 rounded-full text-sm text-blue-800">Python</span>
-                                    <span class="bg-blue-100 px-3 py-1 rounded-full text-sm text-blue-800">C++</span>
-                                    <span class="bg-blue-100 px-3 py-1 rounded-full text-sm text-blue-800">MATLAB</span>
-                                </div>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-medium text-gray-700 mb-2">Machine Learning & AI</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-green-100 px-3 py-1 rounded-full text-sm text-green-800">TensorFlow</span>
-                                    <span class="bg-green-100 px-3 py-1 rounded-full text-sm text-green-800">PyTorch</span>
-                                    <span class="bg-green-100 px-3 py-1 rounded-full text-sm text-green-800">OpenCV</span>
-                                    <span class="bg-green-100 px-3 py-1 rounded-full text-sm text-green-800">Scikit-learn</span>
-                                </div>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-medium text-gray-700 mb-2">Tools & Platforms</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-purple-100 px-3 py-1 rounded-full text-sm text-purple-800">Git</span>
-                                    <span class="bg-purple-100 px-3 py-1 rounded-full text-sm text-purple-800">Linux</span>
-                                    <span class="bg-purple-100 px-3 py-1 rounded-full text-sm text-purple-800">Docker</span>
-                                    <span class="bg-purple-100 px-3 py-1 rounded-full text-sm text-purple-800">AWS</span>
-                                </div>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-medium text-gray-700 mb-2">Areas of Expertise</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-yellow-100 px-3 py-1 rounded-full text-sm text-yellow-800">Computer Vision</span>
-                                    <span class="bg-yellow-100 px-3 py-1 rounded-full text-sm text-yellow-800">Deep Learning</span>
-                                    <span class="bg-yellow-100 px-3 py-1 rounded-full text-sm text-yellow-800">Embedded Systems</span>
-                                    <span class="bg-yellow-100 px-3 py-1 rounded-full text-sm text-yellow-800">AI Research</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">About Me</h2>
+            <div class="bg-white rounded-xl shadow-xl p-8">
+                <div class="prose max-w-none">
+                    <p class="text-lg text-gray-700 mb-6">
+                        I am a Computer Engineering student at the University of California, Santa Cruz, with a passion for machine learning, computer vision, and hardware design. My academic journey has been focused on developing expertise in both software and hardware aspects of computing systems.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Currently, I am working as a Research Assistant at the Computer Vision Lab, where I contribute to projects involving deep learning and computer vision applications. My experience spans from developing machine learning models to implementing hardware solutions using FPGAs and microcontrollers.
+                    </p>
+                    <p class="text-lg text-gray-700">
+                        I am particularly interested in the intersection of hardware and software, specifically in optimizing machine learning algorithms for embedded systems and developing efficient computer vision solutions for real-world applications.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20">
+    <section id="projects" class="py-20 bg-gradient-to-b from-blue-50 to-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project Card 1 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div class="p-6">
+                        <div class="mb-4">
+                            <svg class="w-16 h-16 mx-auto text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
                         <h3 class="text-xl font-semibold mb-2">Autonomous Vehicle Perception</h3>
-                        <p class="text-gray-600 mb-4">Developed computer vision algorithms for object detection and tracking in autonomous vehicles, contributing to the MDAS.ai project.</p>
+                        <p class="text-gray-600 mb-4">Developed computer vision algorithms for object detection and tracking in autonomous vehicles, contributing to the MDAS.ai project. Implemented real-time tracking systems and optimized deep learning models for edge deployment.</p>
                         <div class="flex gap-2">
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm">Python</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm">OpenCV</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm">PyTorch</span>
+                            <span class="bg-blue-100 px-2 py-1 rounded text-sm text-blue-800">Python</span>
+                            <span class="bg-blue-100 px-2 py-1 rounded text-sm text-blue-800">OpenCV</span>
+                            <span class="bg-blue-100 px-2 py-1 rounded text-sm text-blue-800">PyTorch</span>
                         </div>
                     </div>
                 </div>
                 <!-- Project Card 2 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div class="p-6">
+                        <div class="mb-4">
+                            <svg class="w-16 h-16 mx-auto text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                        </div>
                         <h3 class="text-xl font-semibold mb-2">AI Research at RTRC</h3>
-                        <p class="text-gray-600 mb-4">Implemented machine learning models for computer vision applications in defense and aerospace systems.</p>
+                        <p class="text-gray-600 mb-4">Implemented machine learning models for computer vision applications in defense and aerospace systems. Developed novel approaches to real-time object detection and tracking in challenging environments.</p>
                         <div class="flex gap-2">
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm">TensorFlow</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm">Python</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm">ML</span>
+                            <span class="bg-green-100 px-2 py-1 rounded text-sm text-green-800">TensorFlow</span>
+                            <span class="bg-green-100 px-2 py-1 rounded text-sm text-green-800">Python</span>
+                            <span class="bg-green-100 px-2 py-1 rounded text-sm text-green-800">ML</span>
                         </div>
                     </div>
                 </div>
                 <!-- Project Card 3 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div class="p-6">
+                        <div class="mb-4">
+                            <svg class="w-16 h-16 mx-auto text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                        </div>
                         <h3 class="text-xl font-semibold mb-2">Computer Engineering Projects</h3>
-                        <p class="text-gray-600 mb-4">Various embedded systems and hardware projects demonstrating expertise in computer engineering and system design.</p>
+                        <p class="text-gray-600 mb-4">Various embedded systems and hardware projects demonstrating expertise in computer engineering and system design. Includes FPGA implementations, custom PCB designs, and real-time systems development.</p>
                         <div class="flex gap-2">
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm">C++</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm">Embedded Systems</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-sm">Hardware</span>
+                            <span class="bg-purple-100 px-2 py-1 rounded text-sm text-purple-800">C++</span>
+                            <span class="bg-purple-100 px-2 py-1 rounded text-sm text-purple-800">Verilog</span>
+                            <span class="bg-purple-100 px-2 py-1 rounded text-sm text-purple-800">Hardware</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section id="documents" class="py-20 bg-gradient-to-b from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Downloadable Documents</h2>
+            <div class="bg-white rounded-xl shadow-xl p-6">
+                <div class="download-list space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition duration-300">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
+                            <div>
+                                <h3 class="font-medium text-gray-900">Resume</h3>
+                                <p class="text-sm text-gray-600">Updated professional resume</p>
+                            </div>
+                        </div>
+                        <a href="im_oldresume.png" download class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                            <i class="fas fa-download mr-2"></i>Download
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-green-50 rounded-lg hover:bg-green-100 transition duration-300">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-file-alt text-green-500 text-2xl"></i>
+                            <div>
+                                <h3 class="font-medium text-gray-900">Portfolio</h3>
+                                <p class="text-sm text-gray-600">Detailed project portfolio</p>
+                            </div>
+                        </div>
+                        <a href="pdf_oldportfolio.pdf" download class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">
+                            <i class="fas fa-download mr-2"></i>Download
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition duration-300">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-file-code text-purple-500 text-2xl"></i>
+                            <div>
+                                <h3 class="font-medium text-gray-900">Code Samples</h3>
+                                <p class="text-sm text-gray-600">Selected code examples</p>
+                            </div>
+                        </div>
+                        <a href="#" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300">
+                            <i class="fas fa-download mr-2"></i>Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiences Section -->
+    <section id="experiences" class="py-20 bg-gradient-to-b from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Experiences & Expertise</h2>
+            
+            <div class="space-y-8">
+                <div class="resource-item">
+                    <div class="resource-header" onclick="toggleResource('technical-skills')">
+                        <h3 class="text-xl font-semibold text-blue-600">Technical Skills Overview</h3>
+                        <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div id="technical-skills" class="resource-content">
+                        <div class="image-container">
+                            <img src="im/keyskills.png" alt="Technical Skills" class="w-full">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-header" onclick="toggleResource('key-coursework')">
+                        <h3 class="text-xl font-semibold text-green-600">Key Coursework</h3>
+                        <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div id="key-coursework" class="resource-content">
+                        <div class="image-container">
+                            <img src="im/keycoursework.png" alt="Key Coursework" class="w-full">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-header" onclick="toggleResource('key-proficiency')">
+                        <h3 class="text-xl font-semibold text-purple-600">Key Proficiencies</h3>
+                        <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div id="key-proficiency" class="resource-content">
+                        <div class="image-container">
+                            <img src="im/keyproficiency.png" alt="Key Proficiencies" class="w-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-20 bg-gradient-to-b from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Learning Resources</h2>
+            
+            <!-- PDFs Section -->
+            <div class="space-y-4 mb-12">
+                <div class="resource-item">
+                    <div class="resource-header" onclick="toggleResource('nn-cheatsheet')">
+                        <h3 class="text-xl font-semibold text-blue-600">Neural Networks Cheatsheet</h3>
+                        <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div id="nn-cheatsheet" class="resource-content">
+                        <iframe src="https://www.r0ry.com/resources/ml/myNN_cheatsheet.pdf" class="pdf-container"></iframe>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-header" onclick="toggleResource('dl-cheatsheet')">
+                        <h3 class="text-xl font-semibold text-green-600">Deep Learning Cheatsheet</h3>
+                        <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div id="dl-cheatsheet" class="resource-content">
+                        <iframe src="https://www.r0ry.com/resources/ml/myDL_cheatsheet.pdf" class="pdf-container"></iframe>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-header" onclick="toggleResource('dl-notes')">
+                        <h3 class="text-xl font-semibold text-purple-600">Deep Learning Notes</h3>
+                        <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div id="dl-notes" class="resource-content">
+                        <iframe src="https://www.r0ry.com/resources/ml/dl.pdf" class="pdf-container"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Images Section -->
+            <div class="space-y-4">
+                <div class="resource-item">
+                    <div class="resource-header" onclick="toggleResource('rvs-whiteboard')">
+                        <h3 class="text-xl font-semibold text-indigo-600">RVS System Architecture</h3>
+                        <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div id="rvs-whiteboard" class="resource-content">
+                        <div class="image-container">
+                            <img src="https://www.r0ry.com/images/rvs_whiteboard.jpg" alt="RVS Whiteboard" class="w-full">
+                            <div class="caption">
+                                <h4 class="text-lg font-semibold text-gray-900">RVS System Architecture Overview</h4>
+                                <p class="text-gray-600 mt-2">Comprehensive system architecture diagram illustrating the RVS implementation, including data flow, component interactions, and system boundaries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-header" onclick="toggleResource('mips-architecture')">
+                        <h3 class="text-xl font-semibold text-teal-600">MIPS32 RISC Architecture</h3>
+                        <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div id="mips-architecture" class="resource-content">
+                        <div class="image-container">
+                            <img src="https://www.r0ry.com/images/simple_mips32bit_risc_architecture.jpg" alt="MIPS32 Architecture" class="w-full">
+                            <div class="caption">
+                                <h4 class="text-lg font-semibold text-gray-900">MIPS32 RISC Processor Architecture</h4>
+                                <p class="text-gray-600 mt-2">Detailed visualization of the MIPS32 RISC processor architecture, highlighting key components, data paths, and control flow mechanisms.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -186,7 +507,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-white py-20">
+    <section id="contact" class="py-20 bg-gradient-to-b from-blue-50 to-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-12">Get in Touch</h2>
             <div class="grid md:grid-cols-2 gap-8">
@@ -202,6 +523,10 @@
                         <a href="https://github.com/RLR-GitHub" class="flex items-center text-gray-600 hover:text-blue-600">
                             <i class="fab fa-github mr-3"></i>
                             RLR-GitHub
+                        </a>
+                        <a href="https://r0ry.com" class="flex items-center text-gray-600 hover:text-blue-600">
+                            <i class="fas fa-globe mr-3"></i>
+                            r0ry.com
                         </a>
                     </div>
                 </div>
@@ -225,11 +550,36 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2024 Roderick Lawrence Renwick. All rights reserved.</p>
-            <p class="mt-2"><a href="https://r0ry.com" class="text-blue-400 hover:text-blue-300">r0ry.com</a></p>
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-sm text-gray-400">© 2024 Roderick L. Renwick. All rights reserved.</p>
+                <div class="mt-2 space-y-1">
+                    <p class="text-sm text-gray-400">www.RoderickLRenwick.com</p>
+                    <p class="text-sm text-gray-400">RoderickLRenwick@gmail.com</p>
+                </div>
+                <p class="mt-4 text-sm text-gray-400">Built with: Tailwind CSS • Anthropic's Claude • Cursor IDE</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        function toggleResource(id) {
+            const content = document.getElementById(id);
+            const chevron = content.previousElementSibling.querySelector('.chevron');
+            const pdfContainer = content.querySelector('.pdf-container');
+            const imageContainer = content.querySelector('.image-container');
+            
+            content.classList.toggle('active');
+            chevron.classList.toggle('active');
+            
+            if (pdfContainer) {
+                pdfContainer.classList.toggle('active');
+            }
+            if (imageContainer) {
+                imageContainer.classList.toggle('active');
+            }
+        }
+    </script>
 </body>
 </html> 
