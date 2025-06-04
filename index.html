@@ -174,18 +174,42 @@
         }
         
         .profile-image {
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #3B82F6;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            animation: rotate 1.5s linear infinite;
         }
         
         .profile-image:hover {
-            animation: rotate 1.5s linear infinite;
             border-color: #60A5FA;
+        }
+
+        .hero-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 3px solid #3B82F6;
+            box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.2);
+            animation: rotate 3s linear infinite;
+            overflow: hidden;
+        }
+        
+        .hero-image:hover {
+            border-color: #60A5FA;
+        }
+
+        .hero-image-container {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
         }
     </style>
 </head>
@@ -213,18 +237,19 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-24 bg-gradient-to-b from-blue-50 to-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white pt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <img src="https://www.r0ry.com/images/remy_wgan-gp/remy_128x128_animation_1.gif" alt="Profile Animation" class="w-40 h-40 mx-auto mb-8 object-cover rounded-full border-4 border-blue-500 shadow-xl">
-                <h1 class="text-5xl font-bold text-gray-900 mb-4">Roderick (Rory) Lawrence Renwick</h1>
-                <p class="text-2xl text-blue-600 mb-4">Computer Engineer</p>
-                <p class="text-xl text-gray-600 mb-8">Focusing on ML & CV Applications</p>
+                <div class="hero-image-container mb-8">
+                    <img src="https://www.r0ry.com/images/remy_wgan-gp/remy_128x128_animation_1.gif" alt="Profile" class="hero-image">
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">Roderick L. Renwick</h1>
+                <p class="text-xl text-gray-600 mb-8">Computer Engineering Student | ML Researcher | Hardware Designer</p>
                 <div class="flex justify-center space-x-4">
-                    <a href="#contact" class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition duration-300 text-lg font-medium shadow-lg">Get in Touch</a>
-                    <a href="im_oldresume.png" download="Roderick_Renwick_Resume.png" class="bg-gray-700 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition duration-300 flex items-center text-lg font-medium shadow-lg">
+                    <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition duration-300">Get in Touch</a>
+                    <a href="im_oldresume.png" download class="bg-white text-blue-600 px-8 py-3 rounded-lg border border-blue-600 hover:bg-blue-50 transition duration-300 flex items-center">
                         <i class="fas fa-download mr-2"></i>
-                        Download Resume
+                        Resume
                     </a>
                 </div>
             </div>
