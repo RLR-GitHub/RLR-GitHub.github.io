@@ -11,7 +11,7 @@
     <meta property="og:title" content="Roderick (Rory) Lawrence Renwick - Portfolio">
     <meta property="og:description" content="ML Engineer, Computer Vision Specialist, and Hardware Designer">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://r0ry.com">
+    <meta property="og:url" content="https://r0ry.github.io/RLR-GitHub.github.io">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="r.png">
@@ -203,22 +203,6 @@
             border-color: #60A5FA;
         }
 
-        .hero-image {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center;
-            border: 3px solid #3B82F6;
-            box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.2);
-            animation: rotate 3s linear infinite;
-            overflow: hidden;
-        }
-        
-        .hero-image:hover {
-            border-color: #60A5FA;
-        }
-
         .hero-image-container {
             width: 280px;
             height: 280px;
@@ -226,6 +210,26 @@
             overflow: hidden;
             margin: 0 auto;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 3px solid #3B82F6;
+            box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.2);
+            animation: rotate 3s linear infinite;
+            overflow: hidden;
+            transform: scale(1.25);
+        }
+        
+        .hero-image:hover {
+            border-color: #60A5FA;
         }
 
         .diagram-grid {
@@ -289,6 +293,23 @@
                 transition: none;
             }
         }
+
+        .hero-image-ccw {
+            animation: rotate-ccw 3s linear infinite;
+        }
+        @keyframes rotate-ccw {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .hero-image-zoom {
+            transform: scale(1.5);
+            object-fit: cover;
+        }
     </style>
     
     <!-- Preload critical assets -->
@@ -323,7 +344,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <div class="hero-image-container mb-8">
-                    <img src="https://www.r0ry.com/images/remy_wgan-gp/remy_128x128_animation_1.gif" alt="Profile" class="hero-image">
+                    <img src="im/remy_wgan-gp/remy_128x128_animation_1.gif" alt="Profile" class="hero-image hero-image-ccw hero-image-zoom">
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">Roderick L. Renwick</h1>
                 <p class="text-xl text-gray-600 mb-8">Computer Engineering Student | ML Researcher | Hardware Designer</p>
@@ -590,7 +611,7 @@
                         </svg>
                     </div>
                     <div id="nn-cheatsheet" class="resource-content">
-                        <iframe src="https://www.r0ry.com/resources/ml/myNN_cheatsheet.pdf" class="pdf-container"></iframe>
+                        <iframe src="resources/ml/myNN_cheatsheet.pdf" class="pdf-container"></iframe>
                     </div>
                 </div>
 
@@ -602,7 +623,7 @@
                         </svg>
                     </div>
                     <div id="dl-cheatsheet" class="resource-content">
-                        <iframe src="https://www.r0ry.com/resources/ml/myDL_cheatsheet.pdf" class="pdf-container"></iframe>
+                        <iframe src="resources/ml/myDL_cheatsheet.pdf" class="pdf-container"></iframe>
                     </div>
                 </div>
 
@@ -614,7 +635,7 @@
                         </svg>
                     </div>
                     <div id="dl-notes" class="resource-content">
-                        <iframe src="https://www.r0ry.com/resources/ml/dl.pdf" class="pdf-container"></iframe>
+                        <iframe src="resources/ml/dl.pdf" class="pdf-container"></iframe>
                     </div>
                 </div>
             </div>
@@ -630,7 +651,7 @@
                     </div>
                     <div id="rvs-whiteboard" class="resource-content">
                         <div class="image-container">
-                            <img src="https://www.r0ry.com/images/rvs_whiteboard.jpg" alt="RVS Whiteboard" class="w-full">
+                            <img src="im/rvs_whiteboard.jpg" alt="RVS Whiteboard" class="w-full">
                             <div class="caption">
                                 <h4 class="text-lg font-semibold text-gray-900">RVS System Architecture Overview</h4>
                                 <p class="text-gray-600 mt-2">Comprehensive system architecture diagram illustrating the RVS implementation, including data flow, component interactions, and system boundaries.</p>
@@ -648,7 +669,7 @@
                     </div>
                     <div id="mips-architecture" class="resource-content">
                         <div class="image-container">
-                            <img src="https://www.r0ry.com/images/simple_mips32bit_risc_architecture.jpg" alt="MIPS32 Architecture" class="w-full">
+                            <img src="im/simple_mips32bit_risc_architecture.jpg" alt="MIPS32 Architecture" class="w-full">
                             <div class="caption">
                                 <h4 class="text-lg font-semibold text-gray-900">MIPS32 RISC Processor Architecture</h4>
                                 <p class="text-gray-600 mt-2">Detailed visualization of the MIPS32 RISC processor architecture, highlighting key components, data paths, and control flow mechanisms.</p>
@@ -678,9 +699,9 @@
                             <i class="fab fa-github mr-3"></i>
                             RLR-GitHub
                         </a>
-                        <a href="https://r0ry.com" class="flex items-center text-gray-600 hover:text-blue-600">
+                        <a href="https://rlr-github.github.io/" class="flex items-center text-gray-600 hover:text-blue-600">
                             <i class="fas fa-globe mr-3"></i>
-                            r0ry.com
+                            rlr-github.github.io
                         </a>
                     </div>
                 </div>
