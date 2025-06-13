@@ -1,6 +1,20 @@
-# Roderick L. Renwick - Portfolio Website
+<div align="center">
+  
+  # Roderick L. Renwick - Portfolio Website
+  
+  <img src="https://github.com/RLR-GitHub/RLR-GitHub/blob/main/RemyFaceCroppedDownsampled.JPG" width="300" style="border-radius: 50%;" alt="Profile Picture">
+  
+  ### 🚀 Transforming Data into Intelligent Solutions
+  
+  ![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=00D4FF&center=true&vCenter=true&width=600&lines=Machine+Learning+Engineer;Computer+Vision+Specialist;AI+Research+%26+Development;Deep+Learning+Enthusiast)
+  
+  [![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=firefox&logoColor=white)](https://rlr-github.github.io)
+  [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact@example.com)
 
-## 🚀 Overview
+</div>
+
+---
+# 🧠 Machine Learning & Computer Vision Portfolio
 
 Personal portfolio website showcasing my journey in machine learning, computer vision, and hardware design. This site serves as a comprehensive hub for my academic achievements, professional experience, and innovative projects at the intersection of AI and embedded systems.
 
