@@ -45,7 +45,11 @@ My passion lies in advancing the field of machine learning and computer vision, 
 The website includes educational resources and documentation:
 - Neural Networks & Deep Learning cheatsheets
 - System architecture diagrams
-- Research papers (AI Arms Race, VLSI MLP)
+- Research papers and presentations:
+  - **AI Arms Race** - Global engineering perspectives on AI competition
+  - **VLSI MLP** - Hardware implementation of neural networks (ECE475 Final Project)
+  - **Cat-Net** - AI-powered cat identification system documentation
+  - **Park-Smart** - Low-Level Design presentation for intelligent parking system
 - Technical skills overview and coursework details
 
 ## 🛠️ Technologies
