@@ -254,21 +254,21 @@
         
         @media (min-width: 1280px) {
             .diagram-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
         .diagram-item {
             background: white;
             border-radius: 12px;
-            padding: 1rem;
+            padding: 1.5rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
         
         .diagram-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.15);
         }
         
         .diagram-item img {
@@ -276,6 +276,27 @@
             height: auto;
             border-radius: 8px;
             object-fit: contain;
+            margin-bottom: 1rem;
+        }
+        
+        .diagram-item h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+        
+        .diagram-item .tech-stack {
+            font-size: 0.875rem;
+            color: #4a5568;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+        
+        .diagram-item p {
+            font-size: 0.875rem;
+            color: #718096;
+            line-height: 1.5;
         }
 
         .diagram-section {
@@ -591,6 +612,30 @@
                             <i class="fas fa-download mr-2"></i>Download
                         </a>
                     </div>
+                    <div class="flex items-center justify-between p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition duration-300">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-file-pdf text-purple-500 text-2xl"></i>
+                            <div>
+                                <h3 class="font-medium text-gray-900">AI Arms Race</h3>
+                                <p class="text-sm text-gray-600">Research paper on AI competition and implications</p>
+                            </div>
+                        </div>
+                        <a href="[AI_Arms_Race.pdf]" download class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300">
+                            <i class="fas fa-download mr-2"></i>Download
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-orange-50 rounded-lg hover:bg-orange-100 transition duration-300">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-microchip text-orange-500 text-2xl"></i>
+                            <div>
+                                <h3 class="font-medium text-gray-900">VLSI MLP</h3>
+                                <p class="text-sm text-gray-600">Hardware implementation of Multi-Layer Perceptron</p>
+                            </div>
+                        </div>
+                        <a href="[VLSI_MLP.pdf]" download class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition duration-300">
+                            <i class="fas fa-download mr-2"></i>Download
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -673,16 +718,28 @@
                     <div class="resource-content active">
                         <div class="diagram-grid">
                             <div class="diagram-item">
-                                <img src="im/PS.png" alt="Power System Architecture" />
+                                <img src="im/scds.png" alt="Smart Cat Door System" />
+                                <h4>Smart Cat Door System</h4>
+                                <div class="tech-stack">ConvNets & Pixel Segmentation (UNet), Embedded Systems</div>
+                                <p>AI-powered cat identification and access control system. Implemented complete pipeline from image gathering, UNet segmentation, CNN training, to real-time embedded deployment.</p>
                             </div>
                             <div class="diagram-item">
-                                <img src="im/scds.png" alt="SCDS System Design" />
+                                <img src="im/wgan-gp.png" alt="Deep-Fake Cat Generator" />
+                                <h4>Deep-Fake Cat Generator (Remy)</h4>
+                                <div class="tech-stack">Generative Adversarial Network (WGAN-GP)</div>
+                                <p>Designed and implemented Wasserstein GAN with Gradient Penalty for high-fidelity synthetic image generation. Explored advanced optimization techniques for training stability.</p>
                             </div>
                             <div class="diagram-item">
-                                <img src="im/vhdl.png" alt="VHDL Implementation" />
+                                <img src="im/PS.png" alt="ParkSmart iPhone Application" />
+                                <h4>ParkSmart iPhone Application</h4>
+                                <div class="tech-stack">CNN, Affine & Perspective Transforms, OpenCV, LAMP Stack</div>
+                                <p>Led senior design team in developing comprehensive parking management system. Integrated computer vision, web backend, and mobile frontend for real-time vacancy detection.</p>
                             </div>
                             <div class="diagram-item">
-                                <img src="im/wgan-gp.png" alt="WGAN-GP Architecture" />
+                                <img src="im/vhdl.png" alt="VHDL Perceptron Implementation" />
+                                <h4>VHDL Perceptron Implementation</h4>
+                                <div class="tech-stack">Multi-Layer Perceptron (MLP), VHDL, Digital Design</div>
+                                <p>Hardware neural network implementation in VHDL. Translated Python MLP to optimized hardware description with focus on combinational logic reduction.</p>
                             </div>
                         </div>
                     </div>
