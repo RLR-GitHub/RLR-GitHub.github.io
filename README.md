@@ -95,7 +95,7 @@ My goal is to bridge the gap between cutting-edge ML research and practical, eff
 
 ## 📞 Contact
 
-- **Email**: RoderickLRenwick@gmail.com
+- **Email**: [RoderickLRenwick@gmail.com](mailto:RoderickLRenwick@gmail.com)
 - **GitHub**: [RLR-GitHub](https://github.com/RLR-GitHub)
 - **Website**: [rlr-github.github.io](https://rlr-github.github.io/)
 - **Personal Site**: [r0ry.com](https://www.r0ry.com)
