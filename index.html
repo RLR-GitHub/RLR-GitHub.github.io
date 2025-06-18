@@ -340,6 +340,17 @@
             transform: scale(1.5);
             object-fit: cover;
         }
+
+        /* Make clickable images show pointer cursor */
+        a .profile-image,
+        a .hero-image {
+            cursor: pointer;
+        }
+        
+        /* Ensure link doesn't affect image styling */
+        a.inline-block {
+            text-decoration: none;
+        }
     </style>
     
     <!-- Preload critical assets -->
@@ -353,7 +364,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <img src="im/image.png" alt="Profile" class="profile-image mr-3" />
+                    <a href="https://www.r0ry.com" target="_blank" rel="noopener noreferrer" class="inline-block">
+                        <img src="im/image.png" alt="Profile" class="profile-image mr-3" />
+                    </a>
                     <span class="text-xl font-bold text-gray-900">RLR</span>
                 </div>
                 <!-- Desktop Navigation -->
@@ -403,7 +416,9 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <div class="hero-image-container mb-8">
-                    <img src="im/remy_wgan-gp/remy_128x128_animation_1.gif" alt="Profile" class="hero-image hero-image-ccw hero-image-zoom">
+                    <a href="https://www.r0ry.com" target="_blank" rel="noopener noreferrer" class="inline-block">
+                        <img src="im/remy_wgan-gp/remy_128x128_animation_1.gif" alt="Profile" class="hero-image hero-image-ccw hero-image-zoom">
+                    </a>
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">Roderick L. Renwick</h1>
                 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=36&pause=1000&color=00D4FF&center=true&vCenter=true&width=600&lines=Machine+Learning+Engineer;Computer+Vision+Specialist;AI+Research+%26+Development;Deep+Learning+Enthusiast" alt="Typing animation of roles" class="typing-svg"/>
@@ -635,13 +650,13 @@
                     </div>
                     <div class="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg hover:from-green-100 hover:to-emerald-100 transition duration-300">
                         <div class="flex items-center space-x-4">
-                            <i class="fas fa-folder-open text-green-500 text-2xl"></i>
+                            <i class="fas fa-file-image text-green-500 text-2xl"></i>
                             <div>
                                 <h3 class="font-medium text-gray-900">ML/CV Project Portfolio</h3>
                                 <p class="text-sm text-gray-600">Comprehensive showcase of AI & vision systems</p>
                             </div>
                         </div>
-                        <a href="pdf_oldportfolio.pdf" download class="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-lg hover:from-green-700 hover:to-emerald-700 transition duration-300">
+                        <a href="2025portfolio.png" download class="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-lg hover:from-green-700 hover:to-emerald-700 transition duration-300">
                             <i class="fas fa-download mr-2"></i>Download
                         </a>
                     </div>
