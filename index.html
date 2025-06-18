@@ -356,7 +356,8 @@
                     <img src="im/image.png" alt="Profile" class="profile-image mr-3" />
                     <span class="text-xl font-bold text-gray-900">RLR</span>
                 </div>
-                <div class="flex items-center space-x-8">
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
                     <a href="#home" class="text-gray-600 hover:text-gray-900">Home</a>
                     <a href="#about" class="text-gray-600 hover:text-gray-900">About</a>
                     <a href="#education" class="text-gray-600 hover:text-gray-900">Education</a>
@@ -368,6 +369,30 @@
                     <a href="#system-diagrams" class="text-gray-600 hover:text-gray-900">Diagrams</a>
                     <a href="#resources" class="text-gray-600 hover:text-gray-900">Resources</a>
                     <a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none focus:text-gray-900" aria-label="Toggle mobile menu">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</a>
+                    <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About</a>
+                    <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Education</a>
+                    <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Experience</a>
+                    <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Projects</a>
+                    <a href="2025portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 hover:text-blue-800 hover:bg-gray-50">Portfolio</a>
+                    <a href="#documents" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Documents</a>
+                    <a href="#experiences" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Expertise</a>
+                    <a href="#system-diagrams" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Diagrams</a>
+                    <a href="#resources" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Resources</a>
+                    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contact</a>
                 </div>
             </div>
         </div>
@@ -381,7 +406,8 @@
                     <img src="im/remy_wgan-gp/remy_128x128_animation_1.gif" alt="Profile" class="hero-image hero-image-ccw hero-image-zoom">
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">Roderick L. Renwick</h1>
-                <p class="text-xl text-gray-600 mb-8">Computer Engineering Student | ML Researcher | Hardware Designer</p>
+                <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=36&pause=1000&color=00D4FF&center=true&vCenter=true&width=600&lines=Machine+Learning+Engineer;Computer+Vision+Specialist;AI+Research+%26+Development;Deep+Learning+Enthusiast" alt="Typing animation of roles" class="typing-svg"/>
+                <p class="text-xl text-gray-600 mb-8">Computer Engineer | Machine Learning Researcher | Hardware Designer</p>
                 <div class="flex justify-center space-x-4">
                     <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition duration-300">Get in Touch</a>
                     <a href="2025portfolio.html" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg hover:from-purple-700 hover:to-blue-700 transition duration-300 flex items-center">
@@ -922,6 +948,24 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+
         function toggleResource(id) {
             const content = document.getElementById(id);
             const chevron = content.previousElementSibling.querySelector('.chevron');

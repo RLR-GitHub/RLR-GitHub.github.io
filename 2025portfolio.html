@@ -367,6 +367,13 @@
             margin-bottom: 1rem;
         }
 
+        .project-highlight-box {
+            background: var(--background);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
         .highlight-list {
             list-style: none;
             padding: 0;
@@ -438,6 +445,148 @@
             margin: 0 auto 3rem;
         }
 
+        /* Highlight Headers */
+        .highlight-header {
+            color: var(--accent);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tech Section */
+        .tech-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-header {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        /* Button Utilities */
+        .align-start {
+            align-self: flex-start;
+        }
+
+        /* Framework Cards */
+        .framework-card {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--surface-light);
+            transition: all 0.3s ease;
+        }
+
+        .framework-card-primary {
+            border-top: 3px solid var(--primary);
+        }
+
+        .framework-card-secondary {
+            border-top: 3px solid var(--secondary);
+        }
+
+        .framework-card-accent {
+            border-top: 3px solid var(--accent);
+        }
+
+        .framework-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .framework-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .image-box {
+            background: var(--background);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .section-header-primary {
+            color: var(--primary);
+        }
+
+        .section-header-secondary {
+            color: var(--secondary);
+        }
+
+        /* Grid Layouts */
+        .grid-layout {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-auto-300 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-auto-400 {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        /* Icon Utilities */
+        .icon-mr {
+            margin-right: 0.5rem;
+        }
+
+        /* Research Cards */
+        .research-card {
+            background: var(--background);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--surface-light);
+        }
+
+        .research-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .research-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Tech Stack */
+        .tech-stack-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        /* Skill Cards */
+        .skill-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--surface-light);
+        }
+
+        .skill-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
         @media (max-width: 768px) {
             .projects-grid {
                 grid-template-columns: 1fr;
@@ -470,7 +619,9 @@
         <div class="container">
             <div class="text-center">
                 <h1 class="hero-title">
-                    Machine Learning & Computer Vision Portfolio
+                    <div class="flex-center gap-1">
+                        <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=36&pause=1000&color=00D4FF&center=true&vCenter=true&width=800&lines=ML+%26+CV+Project+Portfolio" alt="Typing animation of roles" class="typing-svg"/>
+                    </div>
                 </h1>
                 <p class="hero-subtitle">
                     Transforming Complex Problems into Intelligent Solutions
@@ -505,15 +656,15 @@
                         end-to-end pipeline from data collection through real-time deployment, featuring UNet for 
                         pixel-level segmentation and custom CNN for robust animal identification.
                     </p>
-                    <div style="background: var(--background); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
-                        <p style="color: var(--accent); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">
-                            <i class="fas fa-trophy" style="margin-right: 0.5rem;"></i>Project Highlights:
+                    <div class="project-highlight-box">
+                        <p class="highlight-header">
+                            <i class="fas fa-trophy icon-mr"></i>Project Highlights:
                         </p>
-                        <ul style="list-style: none; padding: 0; font-size: 0.875rem; color: var(--text-secondary);">
-                            <li style="padding: 0.25rem 0;">• <strong>CatNet 1.0:</strong> Proof of concept with testing environment</li>
-                            <li style="padding: 0.25rem 0;">• <strong>CatNet 2.0:</strong> Real-world implementation with physical door</li>
-                            <li style="padding: 0.25rem 0;">• Successfully distinguishes between cats (Remy vs Lightning)</li>
-                            <li style="padding: 0.25rem 0;">• Full documentation and reports available</li>
+                        <ul class="highlight-list">
+                            <li>• <strong>CatNet 1.0:</strong> Proof of concept with testing environment</li>
+                            <li>• <strong>CatNet 2.0:</strong> Real-world implementation with physical door</li>
+                            <li>• Successfully distinguishes between cats (Remy vs Lightning)</li>
+                            <li>• Full documentation and reports available</li>
                         </ul>
                     </div>
                     <div style="margin-bottom: 1.5rem;">
@@ -528,7 +679,7 @@
                             <span class="tech-tag">TensorFlow</span>
                         </div>
                     </div>
-                    <a href="https://www.r0ry.com/html/smart_cat_door.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="align-self: flex-start;">View Full Project</a>
+                    <a href="https://www.r0ry.com/html/smart_cat_door.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary align-start">View Full Project</a>
                 </div>
 
                 <!-- Project 2: Deep-Fake Cat Generator -->
@@ -542,15 +693,15 @@
                         high-fidelity synthetic image generation. Explored cutting-edge techniques in generator-critic 
                         optimization and training stability for photorealistic results.
                     </p>
-                    <div style="background: var(--background); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
-                        <p style="color: var(--accent); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">
-                            <i class="fas fa-chart-line" style="margin-right: 0.5rem;"></i>Implementation Progression:
+                    <div class="project-highlight-box">
+                        <p class="highlight-header">
+                            <i class="fas fa-chart-line icon-mr"></i>Implementation Progression:
                         </p>
-                        <ul style="list-style: none; padding: 0; font-size: 0.875rem; color: var(--text-secondary);">
-                            <li style="padding: 0.25rem 0;">• <strong>WGAN-GP:</strong> Earth mover's distance with gradient penalty</li>
-                            <li style="padding: 0.25rem 0;">• <strong>WGAN:</strong> Lipschitz condition via weight clipping</li>
-                            <li style="padding: 0.25rem 0;">• <strong>Regular GAN:</strong> Initial implementation with mode collapse issues</li>
-                            <li style="padding: 0.25rem 0;">• Performance graphs and generation demonstrations included</li>
+                        <ul class="highlight-list">
+                            <li>• <strong>WGAN-GP:</strong> Earth mover's distance with gradient penalty</li>
+                            <li>• <strong>WGAN:</strong> Lipschitz condition via weight clipping</li>
+                            <li>• <strong>Regular GAN:</strong> Initial implementation with mode collapse issues</li>
+                            <li>• Performance graphs and generation demonstrations included</li>
                         </ul>
                     </div>
                     <div style="margin-bottom: 1.5rem;">
@@ -564,7 +715,7 @@
                             <span class="tech-tag">GPU Computing</span>
                         </div>
                     </div>
-                    <a href="https://www.r0ry.com/html/remy_gans.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="align-self: flex-start;">View Full Project</a>
+                    <a href="https://www.r0ry.com/html/remy_gans.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary align-start">View Full Project</a>
                 </div>
 
                 <!-- Project 3: ParkSmart -->
@@ -578,15 +729,15 @@
                         in developing comprehensive system integrating real-time CV analysis, web backend, and native 
                         iOS application with advanced perspective transforms and homography matrices.
                     </p>
-                    <div style="background: var(--background); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
-                        <p style="color: var(--accent); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">
-                            <i class="fas fa-parking" style="margin-right: 0.5rem;"></i>Project Features:
+                    <div class="project-highlight-box">
+                        <p class="highlight-header">
+                            <i class="fas fa-parking icon-mr"></i>Project Features:
                         </p>
-                        <ul style="list-style: none; padding: 0; font-size: 0.875rem; color: var(--text-secondary);">
-                            <li style="padding: 0.25rem 0;">• Parking efficiency app with demo implementation</li>
-                            <li style="padding: 0.25rem 0;">• Real-world implementation plans (COVID-19 impacted)</li>
-                            <li style="padding: 0.25rem 0;">• Complete training pipeline for parking detection</li>
-                            <li style="padding: 0.25rem 0;">• Final report with full documentation available</li>
+                        <ul class="highlight-list">
+                            <li>• Parking efficiency app with demo implementation</li>
+                            <li>• Real-world implementation plans (COVID-19 impacted)</li>
+                            <li>• Complete training pipeline for parking detection</li>
+                            <li>• Final report with full documentation available</li>
                         </ul>
                     </div>
                     <div style="margin-bottom: 1.5rem;">
@@ -601,7 +752,7 @@
                             <span class="tech-tag">Real-time Analysis</span>
                         </div>
                     </div>
-                    <a href="https://www.r0ry.com/html/park_smart.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="align-self: flex-start;">View Full Project</a>
+                    <a href="https://www.r0ry.com/html/park_smart.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary align-start">View Full Project</a>
                 </div>
 
                 <!-- Project 4: VHDL Neural Network -->
@@ -615,15 +766,15 @@
                         co-design. Translated Python MLP to optimized VHDL with focus on combinational logic reduction 
                         for FPGA deployment, achieving significant performance gains.
                     </p>
-                    <div style="background: var(--background); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
-                        <p style="color: var(--accent); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">
-                            <i class="fas fa-microchip" style="margin-right: 0.5rem;"></i>Implementation Details:
+                    <div class="project-highlight-box">
+                        <p class="highlight-header">
+                            <i class="fas fa-microchip icon-mr"></i>Implementation Details:
                         </p>
-                        <ul style="list-style: none; padding: 0; font-size: 0.875rem; color: var(--text-secondary);">
-                            <li style="padding: 0.25rem 0;">• Multi-layer perceptron in hardware description language</li>
-                            <li style="padding: 0.25rem 0;">• Python to VHDL translation with optimization</li>
-                            <li style="padding: 0.25rem 0;">• Combinational logic reduction techniques</li>
-                            <li style="padding: 0.25rem 0;">• FPGA synthesis and performance analysis</li>
+                        <ul class="highlight-list">
+                            <li>• Multi-layer perceptron in hardware description language</li>
+                            <li>• Python to VHDL translation with optimization</li>
+                            <li>• Combinational logic reduction techniques</li>
+                            <li>• FPGA synthesis and performance analysis</li>
                         </ul>
                     </div>
                     <div style="margin-bottom: 1.5rem;">
@@ -638,7 +789,7 @@
                             <span class="tech-tag">Logic Optimization</span>
                         </div>
                     </div>
-                    <a href="https://www.r0ry.com/html/vhdl_mlp.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="align-self: flex-start;">View Full Project</a>
+                    <a href="https://www.r0ry.com/html/vhdl_mlp.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary align-start">View Full Project</a>
                 </div>
             </div>
         </div>
@@ -942,7 +1093,7 @@
                         Core concepts and mathematics behind neural networks, including backpropagation, 
                         activation functions, optimization algorithms, and network architectures.
                     </p>
-                    <iframe src="resources/ml/myNN_cheatsheet.pdf" class="pdf-container mb-1"></iframe>
+                    <iframe src="resources/ml/myNN_cheatsheet.pdf" class="pdf-container mb-1" title="Neural Networks Fundamentals PDF"></iframe>
                     <div class="flex-center gap-1">
                         <a href="resources/ml/myNN_cheatsheet.pdf" download class="btn btn-small">
                             <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Download PDF
@@ -963,7 +1114,7 @@
                         In-depth exploration of deep learning concepts, advanced architectures, 
                         regularization techniques, and state-of-the-art implementations.
                     </p>
-                    <iframe src="resources/ml/dl.pdf" class="pdf-container mb-1"></iframe>
+                    <iframe src="resources/ml/dl.pdf" class="pdf-container mb-1" title="Deep Learning Notes PDF"></iframe>
                     <div class="flex-center gap-1">
                         <a href="resources/ml/dl.pdf" download class="btn btn-small">
                             <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Download PDF
@@ -984,7 +1135,7 @@
                         Essential deep learning concepts for beginners and practitioners, covering 
                         CNN architectures, RNNs, autoencoders, and practical implementation tips.
                     </p>
-                    <iframe src="resources/ml/myDL_cheatsheet.pdf" class="pdf-container mb-1"></iframe>
+                    <iframe src="resources/ml/myDL_cheatsheet.pdf" class="pdf-container mb-1" title="Introduction to Deep Learning Cheatsheet PDF"></iframe>
                     <div class="flex-center gap-1">
                         <a href="resources/ml/myDL_cheatsheet.pdf" download class="btn btn-small">
                             <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Download PDF
