@@ -84,13 +84,24 @@ My goal is to bridge the gap between cutting-edge ML research and practical, eff
 - **Resource Library**: Downloadable PDFs and educational materials
 - **Project Showcases**: Detailed system diagrams and architecture visualizations
 - **Professional Timeline**: Education and experience sections
+- **Dedicated Portfolio Page**: [2025portfolio.html](https://rlr-github.github.io/2025portfolio.html) - Comprehensive ML/CV project showcase with interactive SVG visualizations
+
+## 📄 Website Structure
+
+- **Main Site**: [index.html](https://rlr-github.github.io/) - Landing page with comprehensive overview
+- **Portfolio**: [2025portfolio.html](https://rlr-github.github.io/2025portfolio.html) - Detailed ML/CV project showcase
+- **Resume**: [2025resume.html](https://rlr-github.github.io/2025resume.html) - Interactive resume with PDF export
+- **Resources**: Educational materials, cheatsheets, and documentation
 
 ## 📞 Contact
 
 - **Email**: RoderickLRenwick@gmail.com
 - **GitHub**: [RLR-GitHub](https://github.com/RLR-GitHub)
 - **Website**: [rlr-github.github.io](https://rlr-github.github.io/)
+- **Personal Site**: [r0ry.com](https://www.r0ry.com)
 
 ---
 
 *Built with passion using Tailwind CSS, powered by innovation and a drive to advance the field of AI*
+
+*Last Updated: 2025*
