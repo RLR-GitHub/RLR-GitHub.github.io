@@ -151,6 +151,17 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        
+        /* List Styles */
+        .skill-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skill-list li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+        }
 
         .btn {
             display: inline-block;
@@ -181,6 +192,40 @@
             color: white;
         }
 
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        .btn-download {
+            background: var(--surface-light);
+            color: var(--text-primary);
+            border-color: var(--surface-light);
+        }
+
+        .btn-download:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: rgba(30, 41, 59, 0.9);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        
         /* Footer */
         footer {
             background: var(--surface);
@@ -197,6 +242,202 @@
             margin-bottom: 4rem;
         }
 
+        /* Text Styles */
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+
+        .text-primary {
+            color: var(--text-primary);
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .text-muted {
+            color: var(--text-muted);
+        }
+
+        /* Project Styles */
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Section Styles */
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Layout Utilities */
+        .text-center {
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-center {
+            display: flex;
+            justify-content: center;
+        }
+
+        .flex-between {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gap-1 {
+            gap: 1rem;
+        }
+
+        .gap-2 {
+            gap: 2rem;
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        /* Section Utilities */
+        .section-hero {
+            padding: 6rem 0 4rem;
+        }
+
+        .section-main {
+            padding: 4rem 0;
+        }
+
+        .section-dark {
+            background: var(--surface);
+        }
+
+        .section-gradient {
+            background: linear-gradient(135deg, var(--surface) 0%, var(--background) 100%);
+        }
+
+        /* Image Styles */
+        .img-cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+
+        .img-contain {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+        /* Box Styles */
+        .highlight-box {
+            background: var(--background);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-list {
+            list-style: none;
+            padding: 0;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .highlight-list li {
+            padding: 0.25rem 0;
+        }
+
+        /* PDF Viewer Styles */
+        .pdf-container {
+            height: 600px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .cheatsheet-card {
+            background: var(--surface);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--surface-light);
+            transition: all 0.3s ease;
+        }
+
+        .cheatsheet-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+
+        .cheatsheet-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .mb-1 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-1-5 {
+            margin-bottom: 1.5rem;
+        }
+
+        .icon-primary {
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        .icon-secondary {
+            color: var(--secondary);
+            margin-right: 0.5rem;
+        }
+
+        .icon-accent {
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+
+        .description-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
         @media (max-width: 768px) {
             .projects-grid {
                 grid-template-columns: 1fr;
@@ -208,13 +449,13 @@
     <div class="animated-bg"></div>
 
     <!-- Navigation -->
-    <nav style="background: var(--surface); padding: 1rem 0; position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); background: rgba(30, 41, 59, 0.9);">
+    <nav class="navbar">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <h1 style="font-size: 1.5rem; font-weight: 700; margin: 0;">RLR Portfolio</h1>
+            <div class="flex-between">
+                <div class="flex gap-1 align-center">
+                    <h1 class="nav-title">RLR Portfolio</h1>
                 </div>
-                <div style="display: flex; gap: 1rem;">
+                <div class="flex gap-1">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="2025resume.html" class="nav-link">Resume</a>
                     <a href="https://github.com/RLR-GitHub" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -225,21 +466,21 @@
     </nav>
 
     <!-- Hero Section -->
-    <section style="padding: 6rem 0 4rem;">
+    <section class="section-hero">
         <div class="container">
-            <div style="text-align: center;">
-                <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; background: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            <div class="text-center">
+                <h1 class="hero-title">
                     Machine Learning & Computer Vision Portfolio
                 </h1>
-                <p style="font-size: 1.5rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                <p class="hero-subtitle">
                     Transforming Complex Problems into Intelligent Solutions
                 </p>
-                <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto 3rem;">
+                <p class="hero-description">
                     A comprehensive showcase of my work in applied machine learning, computer vision, and AI research. 
                     From autonomous systems to generative models, these projects demonstrate my expertise in developing 
                     end-to-end solutions that bridge theoretical concepts with practical implementations.
                 </p>
-                <div style="display: flex; gap: 1rem; justify-content: center;">
+                <div class="flex-center gap-1">
                     <a href="#featured-projects" class="btn">View Projects</a>
                     <a href="2025resume.png" download class="btn btn-secondary">Download Resume</a>
                 </div>
@@ -248,7 +489,7 @@
     </section>
 
     <!-- Featured ML/CV Projects Section -->
-    <section id="featured-projects" style="padding: 4rem 0;">
+    <section id="featured-projects" class="section-main">
         <div class="container">
             <h2 class="section-title">Featured Machine Learning & Computer Vision Projects</h2>
             
@@ -256,10 +497,10 @@
                 <!-- Project 1: Smart Cat Door System -->
                 <div class="project-card">
                     <div class="svg-placeholder">
-                        <img src="im/svg_imgs/scds.png" alt="Smart Cat Door System" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.5rem;">
+                        <img src="im/svg_imgs/scds.png" alt="Smart Cat Door System" class="img-cover">
                     </div>
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Smart Cat Door System (CatNet)</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem; flex-grow: 1;">
+                    <h3 class="project-title">Smart Cat Door System (CatNet)</h3>
+                    <p class="project-description">
                         AI-powered access control system using advanced computer vision and deep learning. Implemented 
                         end-to-end pipeline from data collection through real-time deployment, featuring UNet for 
                         pixel-level segmentation and custom CNN for robust animal identification.
@@ -293,10 +534,10 @@
                 <!-- Project 2: Deep-Fake Cat Generator -->
                 <div class="project-card">
                     <div class="svg-placeholder">
-                        <img src="im/svg_imgs/wgan-gp.png" alt="Deep-Fake Cat Generator (Remy)" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.5rem;">
+                        <img src="im/svg_imgs/wgan-gp.png" alt="Deep-Fake Cat Generator (Remy)" class="img-cover">
                     </div>
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Deep-Fake Cat Generator (Remy)</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem; flex-grow: 1;">
+                    <h3 class="project-title">Deep-Fake Cat Generator (Remy)</h3>
+                    <p class="project-description">
                         Advanced generative AI project implementing Wasserstein GAN with Gradient Penalty for 
                         high-fidelity synthetic image generation. Explored cutting-edge techniques in generator-critic 
                         optimization and training stability for photorealistic results.
@@ -329,10 +570,10 @@
                 <!-- Project 3: ParkSmart -->
                 <div class="project-card">
                     <div class="svg-placeholder">
-                        <img src="im/svg_imgs/ps.png" alt="ParkSmart iPhone Application" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.5rem;">
+                        <img src="im/svg_imgs/ps.png" alt="ParkSmart iPhone Application" class="img-cover">
                     </div>
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">ParkSmart iPhone Application</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem; flex-grow: 1;">
+                    <h3 class="project-title">ParkSmart iPhone Application</h3>
+                    <p class="project-description">
                         Full-stack computer vision solution for intelligent parking management. Led senior design team 
                         in developing comprehensive system integrating real-time CV analysis, web backend, and native 
                         iOS application with advanced perspective transforms and homography matrices.
@@ -366,10 +607,10 @@
                 <!-- Project 4: VHDL Neural Network -->
                 <div class="project-card">
                     <div class="svg-placeholder">
-                        <img src="im/svg_imgs/vhdl.png" alt="VHDL Perceptron Implementation" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.5rem;">
+                        <img src="im/svg_imgs/vhdl.png" alt="VHDL Perceptron Implementation" class="img-cover">
                     </div>
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">VHDL Perceptron Implementation</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem; flex-grow: 1;">
+                    <h3 class="project-title">VHDL Perceptron Implementation</h3>
+                    <p class="project-description">
                         Hardware-accelerated neural network implementation demonstrating expertise in hardware-software 
                         co-design. Translated Python MLP to optimized VHDL with focus on combinational logic reduction 
                         for FPGA deployment, achieving significant performance gains.
@@ -404,7 +645,7 @@
     </section>
 
     <!-- Conceptual Frameworks Section -->
-    <section style="padding: 4rem 0; background: linear-gradient(135deg, var(--surface) 0%, var(--background) 100%);">
+    <section class="section-main section-gradient">
         <div class="container">
             <h2 class="section-title">Conceptual Frameworks & Implementation Expertise</h2>
             <p style="text-align: center; color: var(--text-secondary); max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem;">
@@ -467,6 +708,9 @@
                         <div style="background: var(--background); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
                             <img src="im/svg_imgs/conv_advanced.png" alt="Advanced Conv Architecture" style="width: 100%; height: auto; border-radius: 0.5rem;">
                         </div>
+                        <a href="im/svg_imgs/conv_advanced.png" download class="btn btn-small btn-download mb-1">
+                            <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Download Architecture Diagram
+                        </a>
                         <p style="color: var(--text-secondary); font-size: 0.95rem;">
                             State-of-the-art CNN architectures with residual connections, attention mechanisms, 
                             and multi-scale feature fusion. Proven implementation in production systems.
@@ -485,6 +729,9 @@
                         <div style="background: var(--background); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
                             <img src="im/svg_imgs/mlp_advanced.png" alt="Advanced MLP Architecture" style="width: 100%; height: auto; border-radius: 0.5rem;">
                         </div>
+                        <a href="im/svg_imgs/mlp_advanced.png" download class="btn btn-small btn-download mb-1">
+                            <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Download Architecture Diagram
+                        </a>
                         <p style="color: var(--text-secondary); font-size: 0.95rem;">
                             Complex multi-layer architectures with advanced activation functions, regularization 
                             techniques, and optimization strategies for superior generalization.
@@ -503,6 +750,9 @@
                         <div style="background: var(--background); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
                             <img src="im/svg_imgs/vhdl_advanced.png" alt="Advanced Hardware Simulation" style="width: 100%; height: auto; border-radius: 0.5rem;">
                         </div>
+                        <a href="im/svg_imgs/vhdl_advanced.png" download class="btn btn-small btn-download mb-1">
+                            <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Download Architecture Diagram
+                        </a>
                         <p style="color: var(--text-secondary); font-size: 0.95rem;">
                             Advanced FPGA implementations and hardware simulations for neural network acceleration. 
                             Expertise in hardware-software co-design for edge AI applications.
@@ -557,7 +807,7 @@
     </section>
 
     <!-- Additional Projects Section -->
-    <section style="padding: 4rem 0; background: var(--surface);">
+    <section class="section-main section-dark">
         <div class="container">
             <h2 class="section-title">Research & Development Projects</h2>
             
@@ -621,7 +871,7 @@
     </section>
 
     <!-- Skills & Expertise -->
-    <section style="padding: 4rem 0;">
+    <section class="section-main">
         <div class="container">
             <h2 class="section-title">Technical Expertise</h2>
             
@@ -632,11 +882,11 @@
                         <i class="fas fa-brain" style="color: var(--primary); margin-right: 0.5rem;"></i>
                         Machine Learning & AI
                     </h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Deep Learning (CNNs, GANs, Transformers)</li>
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Computer Vision & Image Processing</li>
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Neural Network Optimization</li>
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Model Deployment & Edge AI</li>
+                    <ul class="skill-list">
+                        <li>• Deep Learning (CNNs, GANs, Transformers)</li>
+                        <li>• Computer Vision & Image Processing</li>
+                        <li>• Neural Network Optimization</li>
+                        <li>• Model Deployment & Edge AI</li>
                     </ul>
                 </div>
 
@@ -646,11 +896,11 @@
                         <i class="fas fa-code" style="color: var(--secondary); margin-right: 0.5rem;"></i>
                         Programming & Tools
                     </h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Python, C++, MATLAB, VHDL</li>
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• TensorFlow, PyTorch, OpenCV</li>
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Git, Docker, AWS</li>
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• FPGA Development Tools</li>
+                    <ul class="skill-list">
+                        <li>• Python, C++, MATLAB, VHDL</li>
+                        <li>• TensorFlow, PyTorch, OpenCV</li>
+                        <li>• Git, Docker, AWS</li>
+                        <li>• FPGA Development Tools</li>
                     </ul>
                 </div>
 
@@ -660,19 +910,96 @@
                         <i class="fas fa-microchip" style="color: var(--accent); margin-right: 0.5rem;"></i>
                         Hardware & Systems
                     </h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• VLSI Design & Digital Systems</li>
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• FPGA Implementation</li>
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Embedded Systems</li>
-                        <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Hardware-Software Co-design</li>
+                    <ul class="skill-list">
+                        <li>• VLSI Design & Digital Systems</li>
+                        <li>• FPGA Implementation</li>
+                        <li>• Embedded Systems</li>
+                        <li>• Hardware-Software Co-design</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Cheatsheets Section -->
+    <section class="section-main section-gradient">
+        <div class="container">
+            <h2 class="section-title">ML & Deep Learning Cheatsheets</h2>
+            <p class="text-center description-text">
+                Comprehensive reference materials covering fundamental concepts, architectures, and implementation details 
+                for neural networks and deep learning systems. These resources serve as quick references for both 
+                theoretical understanding and practical implementation.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <!-- Neural Networks Cheatsheet -->
+                <div class="cheatsheet-card">
+                    <h3 class="cheatsheet-title">
+                        <i class="fas fa-network-wired" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                        Neural Networks Fundamentals
+                    </h3>
+                    <p class="text-secondary mb-1-5">
+                        Core concepts and mathematics behind neural networks, including backpropagation, 
+                        activation functions, optimization algorithms, and network architectures.
+                    </p>
+                    <iframe src="resources/ml/myNN_cheatsheet.pdf" class="pdf-container mb-1"></iframe>
+                    <div class="flex-center gap-1">
+                        <a href="resources/ml/myNN_cheatsheet.pdf" download class="btn btn-small">
+                            <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Download PDF
+                        </a>
+                        <a href="resources/ml/myNN_cheatsheet.pdf" target="_blank" class="btn btn-small btn-secondary">
+                            <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>Open in New Tab
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Deep Learning Notes -->
+                <div class="cheatsheet-card">
+                    <h3 class="cheatsheet-title">
+                        <i class="fas fa-brain" style="color: var(--secondary); margin-right: 0.5rem;"></i>
+                        Deep Learning Notes
+                    </h3>
+                    <p class="text-secondary mb-1-5">
+                        In-depth exploration of deep learning concepts, advanced architectures, 
+                        regularization techniques, and state-of-the-art implementations.
+                    </p>
+                    <iframe src="resources/ml/dl.pdf" class="pdf-container mb-1"></iframe>
+                    <div class="flex-center gap-1">
+                        <a href="resources/ml/dl.pdf" download class="btn btn-small">
+                            <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Download PDF
+                        </a>
+                        <a href="resources/ml/dl.pdf" target="_blank" class="btn btn-small btn-secondary">
+                            <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>Open in New Tab
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Intro to Deep Learning Cheatsheet -->
+                <div class="cheatsheet-card">
+                    <h3 class="cheatsheet-title">
+                        <i class="fas fa-graduation-cap" style="color: var(--accent); margin-right: 0.5rem;"></i>
+                        Introduction to Deep Learning
+                    </h3>
+                    <p class="text-secondary mb-1-5">
+                        Essential deep learning concepts for beginners and practitioners, covering 
+                        CNN architectures, RNNs, autoencoders, and practical implementation tips.
+                    </p>
+                    <iframe src="resources/ml/myDL_cheatsheet.pdf" class="pdf-container mb-1"></iframe>
+                    <div class="flex-center gap-1">
+                        <a href="resources/ml/myDL_cheatsheet.pdf" download class="btn btn-small">
+                            <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Download PDF
+                        </a>
+                        <a href="resources/ml/myDL_cheatsheet.pdf" target="_blank" class="btn btn-small btn-secondary">
+                            <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>Open in New Tab
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section id="contact" style="padding: 4rem 0; background: var(--surface);">
+    <section id="contact" class="section-main section-dark">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div style="text-align: center; max-width: 600px; margin: 0 auto;">
