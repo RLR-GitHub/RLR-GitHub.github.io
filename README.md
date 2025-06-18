@@ -2,7 +2,7 @@
 
 ![Profile Picture](https://github.com/RLR-GitHub/RLR-GitHub/blob/main/RemyFaceCroppedDownsampled.JPG)
 
-### 🚀 Transforming Data into Intelligent Solutions
+## 🚀 Transforming Data into Intelligent Solutions
 
 ![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=00D4FF&center=true&vCenter=true&width=600&lines=Machine+Learning+Engineer;Computer+Vision+Specialist;AI+Research+%26+Development;Deep+Learning+Enthusiast)
 
@@ -10,13 +10,15 @@
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact@example.com)
 
 ---
-# 🧠 Machine Learning & Computer Vision Portfolio
+
+## 🧠 Machine Learning & Computer Vision Portfolio
 
 Personal portfolio website showcasing my journey in machine learning, computer vision, and hardware design. This site serves as a comprehensive hub for my academic achievements, professional experience, and innovative projects at the intersection of AI and embedded systems.
 
 ## 🎓 About Me
 
 I am a Master's student in Electrical & Computer Engineering at Purdue University (graduating 2025), specializing in:
+
 - **Signal & Image Processing**
 - **Deep Learning & Neural Networks**
 - **VLSI Design**
@@ -40,12 +42,14 @@ My passion lies in advancing the field of machine learning and computer vision, 
 ## 🔬 Featured Projects
 
 ### Advanced ML/CV Systems
+
 - **Smart Cat Door System**: AI-powered cat identification using UNet segmentation and CNNs
 - **Deep-Fake Cat Generator (Remy)**: WGAN-GP implementation for high-fidelity synthetic image generation
 - **ParkSmart iPhone Application**: Comprehensive parking management system with computer vision
 - **VHDL Perceptron Implementation**: Hardware neural network implementation in VHDL
 
 ### Research & Development
+
 - Autonomous vehicle perception systems
 - Real-time object detection and tracking algorithms
 - Hardware-accelerated machine learning implementations
@@ -53,6 +57,7 @@ My passion lies in advancing the field of machine learning and computer vision, 
 ## 📚 Resources
 
 The website includes educational resources and documentation:
+
 - Neural Networks & Deep Learning cheatsheets
 - System architecture diagrams
 - Research papers and presentations:
@@ -72,6 +77,7 @@ The website includes educational resources and documentation:
 ## 🎯 Aspirations
 
 My goal is to bridge the gap between cutting-edge ML research and practical, efficient implementations. I aim to:
+
 - Develop intelligent systems that can perceive and understand the visual world
 - Create hardware-optimized ML solutions for real-world applications
 - Contribute to advancing autonomous systems and AI safety
@@ -102,6 +108,6 @@ My goal is to bridge the gap between cutting-edge ML research and practical, eff
 
 ---
 
-*Built with passion using Tailwind CSS, powered by innovation and a drive to advance the field of AI*
+Built with passion using Tailwind CSS, powered by innovation and a drive to advance the field of AI
 
-*Last Updated: 2025*
+Last Updated: 2025
