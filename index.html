@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes, maximum-scale=5">
     <meta name="description" content="Roderick (Rory) Lawrence Renwick's Portfolio - ML Engineer, Computer Vision Specialist, and Hardware Designer">
     <meta name="keywords" content="ML Engineer, Computer Vision, Hardware Design, Neural Networks, Portfolio">
     <meta name="author" content="Roderick Lawrence Renwick">
+    <meta name="theme-color" content="#3B82F6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Roderick (Rory) Lawrence Renwick - Portfolio">
@@ -44,12 +47,18 @@
             border-radius: 4px;
         }
         .pdf-container {
-            height: 600px;
+            height: clamp(300px, 80vh, 600px);
             width: 100%;
             border: none;
             border-radius: 8px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             display: none;
+        }
+
+        @media (max-width: 480px) {
+            .pdf-container {
+                height: clamp(250px, 70vh, 450px);
+            }
         }
         .pdf-container.active {
             display: block;
@@ -350,6 +359,122 @@
         /* Ensure link doesn't affect image styling */
         a.inline-block {
             text-decoration: none;
+        }
+
+        /* Mobile-Optimized Touch Targets */
+        button, a.inline-block, .btn {
+            min-height: 44px;
+            min-width: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Enhanced Mobile Media Query for Small Devices */
+        @media (max-width: 480px) {
+            .hero-image-container {
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero-image {
+                width: 280px;
+                height: 280px;
+                transform: scale(1.0);
+            }
+
+            .profile-image {
+                width: 44px;
+                height: 44px;
+            }
+
+            .diagram-grid {
+                gap: 1rem;
+            }
+
+            .diagram-item {
+                padding: 1rem;
+            }
+
+            .diagram-item h4 {
+                font-size: 1rem;
+            }
+
+            .skill-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .coursework-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Improve button spacing on small screens */
+            .flex.justify-center.space-x-4 {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .flex.justify-center.space-x-4 > a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Very Small Devices (max-width: 360px) */
+        @media (max-width: 360px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero-image-container {
+                width: 180px;
+                height: 180px;
+            }
+
+            .hero-image {
+                width: 220px;
+                height: 220px;
+                transform: scale(0.9);
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .max-w-6xl {
+                padding: 0 10px;
+            }
+
+            /* Ensure text is readable without horizontal scroll */
+            body {
+                overflow-x: hidden;
+            }
+        }
+
+        /* Touch-friendly link/button hover states */
+        @media (hover: none) and (pointer: coarse) {
+            a, button {
+                min-height: 48px;
+                padding: 0.75rem 1rem;
+            }
+
+            .skill-tag:hover {
+                transform: none;
+            }
+
+            .course-item:hover {
+                transform: none;
+            }
+        }
+
+        /* Prevent layout shift on iOS */
+        @supports (padding: max(0px)) {
+            body {
+                padding-left: max(0px, env(safe-area-inset-left));
+                padding-right: max(0px, env(safe-area-inset-right));
+                padding-top: max(0px, env(safe-area-inset-top));
+                padding-bottom: max(0px, env(safe-area-inset-bottom));
+            }
         }
     </style>
     
