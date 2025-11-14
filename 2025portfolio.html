@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes, maximum-scale=5">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Roderick L. Renwick - ML & CV Portfolio</title>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -590,6 +593,160 @@
         @media (max-width: 768px) {
             .projects-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        /* Small Device Optimizations (max-width: 480px) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            .navbar {
+                padding: 0.75rem 0;
+            }
+
+            .nav-title {
+                font-size: 1.2rem;
+            }
+
+            .hero-title {
+                font-size: clamp(1.75rem, 4vw, 2.5rem);
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .btn {
+                min-height: 44px;
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+                width: 100%;
+                margin: 0.25rem 0;
+            }
+
+            .flex-center.gap-1 {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .flex-center.gap-1 > .btn {
+                width: 100%;
+            }
+
+            .project-card {
+                padding: 1.5rem;
+            }
+
+            .svg-placeholder {
+                height: 150px;
+            }
+
+            .pdf-container {
+                height: clamp(250px, 70vh, 400px);
+            }
+
+            .skill-list li {
+                font-size: 0.9rem;
+                padding: 0.35rem 0;
+            }
+        }
+
+        /* Very Small Devices (max-width: 360px) */
+        @media (max-width: 360px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .project-title {
+                font-size: 1.25rem;
+            }
+
+            .typing-svg {
+                max-width: 90vw;
+            }
+
+            .nav-title {
+                font-size: 1rem;
+            }
+
+            .nav-link {
+                padding: 0.35rem 0.5rem;
+                font-size: 0.85rem;
+            }
+
+            body {
+                overflow-x: hidden;
+            }
+        }
+
+        /* Touch-Friendly Styles */
+        @media (hover: none) and (pointer: coarse) {
+            .project-card:hover {
+                transform: translateY(-3px);
+            }
+
+            .nav-link:hover {
+                background: none;
+            }
+
+            .tech-tag:hover {
+                transform: none;
+            }
+
+            a, button {
+                min-height: 48px;
+            }
+        }
+
+        /* iOS Notch Support */
+        @supports (padding: max(0px)) {
+            body {
+                padding-left: max(0px, env(safe-area-inset-left));
+                padding-right: max(0px, env(safe-area-inset-right));
+                padding-top: max(0px, env(safe-area-inset-top));
+                padding-bottom: max(0px, env(safe-area-inset-bottom));
+            }
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 480px) {
+            .flex-between {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .flex.gap-1 {
+                flex-direction: column;
+                gap: 0.25rem;
+                width: 100%;
+            }
+
+            .flex.gap-1 > .nav-link {
+                width: 100%;
+                text-align: center;
+                padding: 0.5rem;
             }
         }
     </style>
