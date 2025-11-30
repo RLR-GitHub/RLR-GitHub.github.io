@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roderick L. Renwick (Rory) - AI Systems Engineer & ML Researcher</title>
+    <link rel="icon" type="image/svg+xml" href="/resume-favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof tailwind !== 'undefined') {
+                tailwind.config = {
+                    darkMode: 'class',
+                    theme: {
+                        extend: {
+                            fontFamily: {
+                                fira: ['Fira Code', 'monospace'],
+                            },
+                            keyframes: {
+                                'neon-pulse': {
+                                    '0%, 100%': { textShadow: '0 0 4px currentColor, 0 0 8px currentColor, 0 0 12px currentColor' },
+                                    '50%': { textShadow: '0 0 8px currentColor, 0 0 16px currentColor, 0 0 24px currentColor' }
+                                },
+                                'matrix-rain': {
+                                    '0%': { transform: 'translateY(-100vh)', opacity: '0.8' },
+                                    '100%': { transform: 'translateY(100vh)', opacity: '0.2' }
+                                },
+                                'scanline': {
+                                    '0%': { transform: 'translateY(-100vh)' },
+                                    '100%': { transform: 'translateY(100vh)' }
+                                },
+                                'cursor-blink': {
+                                    '0%, 50%': { opacity: '1' },
+                                    '51%, 100%': { opacity: '0' }
+                                },
+                                'terminal-boot': {
+                                    '0%': { transform: 'scaleY(0)', transformOrigin: 'top' },
+                                    '100%': { transform: 'scaleY(1)', transformOrigin: 'top' }
+                                },
+                                'glitch': {
+                                    '0%, 100%': { transform: 'translate(0)' },
+                                    '20%': { transform: 'translate(-1px, 1px)' },
+                                    '40%': { transform: 'translate(-1px, -1px)' },
+                                    '60%': { transform: 'translate(1px, 1px)' },
+                                    '80%': { transform: 'translate(1px, -1px)' }
+                                },
+                                'typing': {
+                                    'from': { width: '0' },
+                                    'to': { width: '100%' }
+                                }
+                            },
+                            animation: {
+                                'neon-pulse': 'neon-pulse 1.8s ease-in-out infinite',
+                                'matrix-rain': 'matrix-rain 12s linear infinite',
+                                'scanline': 'scanline 3s linear infinite',
+                                'cursor-blink': 'cursor-blink 0.8s step-end infinite',
+                                'terminal-boot': 'terminal-boot 0.6s ease-out',
+                                'glitch': 'glitch 1.2s ease-in-out infinite',
+                                'typing': 'typing 3s steps(40, end)'
+                            },
+                            colors: {
+                                'cyber': {
+                                    'bg': '#0d1117',
+                                    'text': '#00ffcc',
+                                    'cyan': '#00e6ff',
+                                    'pink': '#ff00cc',
+                                    'yellow': '#ffeb3b',
+                                    'orange': '#ff9100',
+                                    'purple': '#bb33ff',
+                                }
+                            }
+                        }
+                    }
+                };
+            }
+        });
+    </script>
+    <style>
+        * {
+            /* Prevent horizontal scrolling on mobile */
+            box-sizing: border-box;
+        }
+
+        html {
+            /* Prevent zoom on double-tap for better UX */
+            touch-action: manipulation;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0d1117 0%, #1a2633 50%, #0d1117 100%);
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+            font-size: 14px;
+            /* Prevent text size adjustment on orientation change */
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        body.light {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c3dafe 50%, #e0e7ff 100%);
+        }
+
+        .terminal-header {
+            background: #0d1117;
+            border: 1px solid #00ffcc;
+            border-radius: 6px;
+            padding: 1rem;
+            font-family: 'Fira Code', monospace;
+            color: #00ffcc;
+            text-shadow: 0 0 8px rgba(0, 255, 204, 0.6);
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+            animation: terminal-boot 0.6s ease-out;
+        }
+
+        .terminal-header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0, 255, 204, 0.05) 50%, rgba(0, 0, 0, 0.2) 50%);
+            background-size: 100% 3px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        .matrix-char {
+            position: absolute;
+            color: #00ffcc;
+            font-family: 'Fira Code', monospace;
+            font-size: 11px;
+            animation: matrix-rain 12s linear infinite;
+        }
+
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00e6ff, transparent);
+            animation: scanline 3s linear infinite;
+            opacity: 0.25;
+        }
+
+        .neon-cyan { color: #00e6ff; text-shadow: 0 0 4px #00e6ff, 0 0 8px #00e6ff; animation: neon-pulse 1.8s ease-in-out infinite; }
+        .neon-pink { color: #ff00cc; text-shadow: 0 0 4px #ff00cc, 0 0 8px #ff00cc; animation: neon-pulse 1.8s ease-in-out infinite; }
+        .neon-yellow { color: #ffeb3b; text-shadow: 0 0 4px #ffeb3b, 0 0 8px #ffeb3b; animation: neon-pulse 1.8s ease-in-out infinite; }
+        .neon-orange { color: #ff9100; text-shadow: 0 0 4px #ff9100, 0 0 8px #ff9100; animation: neon-pulse 1.8s ease-in-out infinite; }
+        .neon-purple { color: #bb33ff; text-shadow: 0 0 4px #bb33ff, 0 0 8px #bb33ff; animation: neon-pulse 1.8s ease-in-out infinite; }
+        .neon-green { color: #00ff88; text-shadow: 0 0 4px #00ff88, 0 0 8px #00ff88; }
+
+        .terminal-prompt {
+            font-family: 'Fira Code', monospace;
+            background: #0d1117;
+            border: 1px solid #00ffcc;
+            border-radius: 4px;
+            padding: 0.5rem;
+        }
+
+        .cyber-border {
+            border: 1px solid transparent;
+            background: linear-gradient(#0d1117, #0d1117) padding-box, linear-gradient(145deg, #00e6ff, #bb33ff) border-box;
+            border-radius: 6px;
+        }
+
+        .cyber-glow {
+            box-shadow: 0 0 12px rgba(0, 230, 255, 0.4);
+            border: 1px solid rgba(0, 230, 255, 0.6);
+        }
+
+        .glitch {
+            position: relative;
+            animation: glitch 1.2s ease-in-out infinite;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch::before { color: #00e6ff; z-index: -1; animation-delay: 0.2s; }
+        .glitch::after { color: #ff00cc; z-index: -2; animation-delay: 0.4s; }
+
+        /* Mobile optimizations - Tablet & below */
+        @media (max-width: 768px) {
+            body { font-size: 13px; }
+            .mobile-stack { display: flex; flex-direction: column; gap: 0.75rem; }
+            .mobile-center { text-align: center; }
+            .mobile-text-sm { font-size: 0.75rem; }
+            .contact-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+                align-items: center;
+            }
+            .contact-grid span { display: none; }
+            .terminal-header {
+                font-size: 0.8rem;
+                padding: 0.75rem 0.5rem;
+                line-height: 1.5;
+            }
+            .neon-cyan, .neon-pink, .neon-yellow, .neon-orange, .neon-purple {
+                text-shadow: 0 0 3px currentColor, 0 0 6px currentColor;
+            }
+            .cyber-border { padding: 1rem; }
+            .max-w-4xl { margin: 0.5rem; }
+            /* Reduce matrix rain density on mobile for performance */
+            .matrix-char:nth-child(3n) { display: none; }
+        }
+
+        @media (min-width: 769px) {
+            .contact-grid { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        }
+
+        /* Enhanced touch targets for mobile */
+        .touch-target {
+            min-height: 44px;
+            min-width: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+
+        /* Mobile optimizations - Phone & below */
+        @media (max-width: 640px) {
+            body { font-size: 12px; }
+            .text-responsive { font-size: 0.7rem; line-height: 1.5; }
+            .title-responsive { font-size: 1.5rem; line-height: 1.2; }
+            .subtitle-responsive { font-size: 0.9rem; }
+            .matrix-char { font-size: 8px; }
+            .cyber-border, .print-container {
+                padding: 0.75rem !important;
+                margin: 0.25rem !important;
+            }
+            /* Stack project buttons below titles on very small screens */
+            .project-item .flex {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 0.5rem !important;
+            }
+            .expand-project-btn {
+                width: 100%;
+                min-height: 44px;
+                font-size: 0.8rem !important;
+            }
+            /* Better spacing for skills section */
+            .space-y-8 { gap: 1rem; }
+            /* Optimize modal for mobile */
+            .cyber-border.rounded-lg.max-w-2xl {
+                max-width: 95vw !important;
+                margin: 1rem;
+            }
+            /* Reduce matrix rain further on small phones */
+            .matrix-char:nth-child(2n) { display: none; }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .title-responsive { font-size: 1.25rem; }
+            .terminal-header {
+                font-size: 0.7rem;
+                padding: 0.5rem;
+            }
+            /* Hide glitch effect on very small screens for performance */
+            .glitch::before, .glitch::after { display: none; }
+            /* Simplify animations on small screens */
+            .typing-text {
+                overflow: visible;
+                white-space: normal;
+                animation: none;
+            }
+            /* Adjust theme toggle for small screens */
+            .fixed.top-2.right-2 {
+                top: 0.5rem;
+                right: 0.5rem;
+            }
+            /* Better textarea sizing on mobile */
+            #job-desc {
+                font-size: 14px !important;
+                min-height: 120px;
+            }
+            /* Full width buttons on mobile */
+            .gemini-button {
+                width: 100%;
+                min-height: 44px;
+            }
+        }
+
+        /* Landscape mobile optimization */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .terminal-header { padding: 0.25rem; font-size: 0.7rem; }
+            .max-w-4xl { margin: 0.25rem; }
+            body { font-size: 11px; }
+            /* Hide matrix rain in landscape mode for better content visibility */
+            .matrix-rain { display: none; }
+        }
+
+        @media print {
+            body { background: white !important; color: black !important; }
+            .no-print { display: none !important; }
+            .print-container { box-shadow: none !important; border: none !important; padding: 0 !important; margin: 0 !important; }
+            .print-break-inside-avoid { break-inside: avoid; }
+            .print-text-black { color: #000 !important; }
+            .print-bg-white { background-color: #fff !important; }
+            .matrix-rain, .scanline, .terminal-header::after { display: none !important; }
+            .neon-cyan, .neon-pink, .neon-yellow, .neon-orange, .neon-purple, .neon-green {
+                color: black !important;
+                text-shadow: none !important;
+                animation: none !important;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .matrix-rain, .scanline, .terminal-header::after, .neon-cyan, .neon-pink, .neon-yellow, .neon-orange, .neon-purple {
+                animation: none !important;
+            }
+        }
+
+        @media (prefers-contrast: high) {
+            .terminal-header::after { display: none; }
+            .neon-cyan, .neon-pink, .neon-yellow, .neon-orange, .neon-purple { text-shadow: none; font-weight: 800; }
+        }
+
+        .theme-icon { transition: transform 0.2s ease; }
+        .theme-icon:hover { transform: scale(1.1); }
+        .gemini-button { transition: all 0.2s ease-in-out; }
+        .gemini-button:hover { transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0, 230, 255, 0.4); }
+        .gemini-output { white-space: pre-wrap; word-wrap: break-word; }
+
+        .terminal-cursor {
+            display: inline-block;
+            background-color: #00ffcc;
+            width: 0.5em;
+            height: 1.1em;
+            animation: cursor-blink 0.8s step-end infinite;
+            vertical-align: bottom;
+            margin-left: 2px;
+        }
+
+        .loading-dots::after {
+            content: '';
+            animation: loading-dots 1.2s steps(4, end) infinite;
+        }
+
+        @keyframes loading-dots {
+            0% { content: ''; }
+            25% { content: '.'; }
+            50% { content: '..'; }
+            75% { content: '...'; }
+            100% { content: ''; }
+        }
+
+        .typing-text {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end);
+        }
+
+        /* Accessibility enhancements */
+        a:focus-visible, button:focus-visible {
+            outline: 3px solid #00e6ff;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* Mobile-specific optimizations */
+        @media (max-width: 640px) {
+            /* Full-screen modal on mobile */
+            #project-modal {
+                padding: 0;
+            }
+            #project-modal .cyber-border {
+                border-radius: 0;
+                max-width: 100vw !important;
+                max-height: 100vh !important;
+                margin: 0;
+            }
+            #modal-body {
+                max-height: calc(100vh - 80px) !important;
+            }
+            /* Prevent text selection on buttons for better mobile UX */
+            button, .gemini-button, .expand-project-btn {
+                -webkit-user-select: none;
+                user-select: none;
+                -webkit-tap-highlight-color: transparent;
+            }
+            /* Better link tap targets */
+            a {
+                display: inline-block;
+                padding: 0.25rem 0;
+            }
+        }
+
+        /* Performance hints for mobile browsers */
+        .matrix-rain, .scanline {
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+<body class="font-fira text-cyber-text transition-colors duration-200">
+    <div class="matrix-rain no-print" id="matrix-container"></div>
+    <div class="scanline no-print"></div>
+
+    <div class="max-w-4xl mx-auto my-6 p-4 print-container">
+        <div class="fixed top-2 right-2 z-50 no-print">
+            <button id="theme-toggle" class="touch-target p-1.5 rounded-full bg-cyber-bg cyber-glow hover:bg-black/70 focus:outline-none transition-all" aria-label="Toggle theme">
+                <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden theme-icon text-cyber-cyan" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden theme-icon text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM3.05 4.95a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zm9.9 9.9a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM4 10a1 1 0 01-1-1H2a1 1 0 110-2h1a1 1 0 011 1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+
+        <div id="resume-content" class="cyber-border bg-cyber-bg/90 backdrop-blur-sm rounded-lg p-6 print-bg-white">
+            <div class="terminal-header mb-6 no-print">
+                <div class="relative z-10">
+                    <span class="neon-cyan">_admin</span><span class="neon-purple">@rlr-systems</span><span class="neon-pink">:$ </span><span class="neon-yellow">./profile_init.sh --mode=interpretable</span><span class="terminal-cursor"></span>
+                    <br><br>
+                    <span class="neon-green">>> [ </span><span class="text-cyber-text">SYSTEM_BOOT</span><span class="neon-green"> ]</span><span class="loading-dots"></span><br>
+                    <span class="neon-green">>> [ </span><span class="text-cyber-text">PROFILE_LOADED</span><span class="neon-green"> ]</span><br>
+                    <span class="neon-green">>> [ </span><span class="text-cyber-text">STATUS: <span class="neon-cyan">ONLINE</span> | MODE: <span class="neon-purple">INTERPRETABLE_AI</span></span><span class="neon-green"> ]</span>
+                </div>
+            </div>
+
+            <header class="mobile-center mb-6 border-b border-cyber-cyan/50 pb-4">
+                <h1 class="title-responsive text-3xl font-bold text-cyber-cyan print-text-black glitch" data-text="RODERICK_LAWRENCE_RENWICK">RODERICK LAWRENCE RENWICK</h1>
+                <p class="text-sm text-cyber-text/80 mt-1 typing-text">> AI Systems Engineer | ML Researcher | Interpretability Specialist</p>
+                <div class="mt-3 contact-grid text-xs text-cyber-text/80">
+                    <span>📍 Bloomfield Hills, MI</span>
+                    <span>&bull;</span>
+                    <a href="mailto:RoderickLRenwick@gmail.com" class="hover:text-cyber-cyan transition-colors">RoderickLRenwick@gmail.com</a>
+                    <span>&bull;</span>
+                    <p>(248) 914-0569</p>
+                    <span>&bull;</span>
+                    <a href="https://rodericklrenwick.com" target="_blank" rel="noopener noreferrer" class="hover:text-cyber-cyan transition-colors">rodericklrenwick.com</a>
+                    <span>&bull;</span>
+                    <a href="https://github.com/RLR-GitHub" target="_blank" rel="noopener noreferrer" class="hover:text-cyber-cyan transition-colors">github.com/RLR-GitHub</a>
+                </div>
+            </header>
+
+            <main class="space-y-8">
+                <section>
+                    <div class="terminal-prompt mb-3">
+                        <span class="neon-green">~/profile$</span> <span class="neon-yellow">cat summary.txt</span>
+                    </div>
+                    <h2 class="subtitle-responsive text-lg font-bold uppercase border-b border-cyber-cyan pb-2 mb-3 text-cyber-cyan print-text-black">[SYSTEM_SPEC]</h2>
+                    <p class="text-responsive text-cyber-text">AI Systems Engineer with strengths in machine learning, computer vision, mechanistic interpretability, and embedded hardware–software co-design. Experience includes defense ML at Raytheon, safety-critical EV engineering at Ford, and autonomous-vehicle perception research. Builds transparent, reliable AI systems optimized for constrained hardware and safety-relevant environments.</p>
+                </section>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="lg:col-span-2 space-y-8">
+                        <section class="print-break-inside-avoid">
+                            <div class="terminal-prompt mb-3">
+                                <span class="neon-green">~/career$</span> <span class="neon-yellow">ls -l experience/</span>
+                            </div>
+                            <h2 class="subtitle-responsive text-lg font-bold uppercase border-b border-cyber-cyan pb-2 mb-3 text-cyber-cyan print-text-black">[EXPERIENCE_LOG]</h2>
+                            <div class="space-y-4">
+                                <div class="cyber-border p-3 bg-cyber-bg/50 hover:bg-cyber-bg/70 transition-all">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between gap-2">
+                                        <h3 class="text-base font-bold neon-cyan print-text-black">Raytheon Technologies</h3>
+                                        <p class="text-xs neon-orange">Research Intern</p>
+                                    </div>
+                                    <p class="font-semibold neon-green text-sm">Machine Learning Research | Robotics Intelligence & Sensor Fusion</p>
+                                    <ul class="list-disc ml-5 mt-2 text-xs text-cyber-text space-y-1">
+                                        <li>Built structured-light + camera fusion models for robotic anomaly detection in aerospace/defense applications.</li>
+                                        <li>Developed interpretability tools for activation tracing and fused-sensor reasoning to ensure model transparency.</li>
+                                        <li>Created reproducible diagnostics workflows for safety-aligned ML prototyping in high-stakes environments.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="cyber-border p-3 bg-cyber-bg/50 hover:bg-cyber-bg/70 transition-all">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between gap-2">
+                                        <h3 class="text-base font-bold neon-cyan print-text-black">Ford Motor Company</h3>
+                                        <p class="text-xs neon-orange">Engineering Intern</p>
+                                    </div>
+                                    <p class="font-semibold neon-green text-sm">EV Functional Safety | Electric Vehicle Systems</p>
+                                    <ul class="list-disc ml-5 mt-2 text-xs text-cyber-text space-y-1">
+                                        <li>Supported ISO 26262 functional-safety engineering for EV control systems and battery architectures.</li>
+                                        <li>Built logic-tracing and failure-propagation tools for embedded software safety verification teams.</li>
+                                        <li>Contributed to system-behavior reasoning and safety-case documentation for production vehicles.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="cyber-border p-3 bg-cyber-bg/50 hover:bg-cyber-bg/70 transition-all">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between gap-2">
+                                        <h3 class="text-base font-bold neon-cyan print-text-black">MDAS.ai Autonomous Vehicle Research</h3>
+                                        <p class="text-xs neon-orange">Research Assistant</p>
+                                    </div>
+                                    <p class="font-semibold neon-green text-sm">Perception Systems | University of Michigan–Dearborn</p>
+                                    <ul class="list-disc ml-5 mt-2 text-xs text-cyber-text space-y-1">
+                                        <li>Built CAN/IMU/CV multimodal fusion pipeline on NVIDIA TX2 for autonomous shuttle perception research.</li>
+                                        <li>Designed visualization tools to inspect modality contributions and temporal reasoning in real-time systems.</li>
+                                        <li>Supported real-world AV data collection and iterative perception-model refinement for edge deployment.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="print-break-inside-avoid">
+                            <div class="terminal-prompt mb-3">
+                                <span class="neon-green">~/projects$</span> <span class="neon-yellow">find . -type f -name "*.py"</span>
+                            </div>
+                            <h2 class="subtitle-responsive text-lg font-bold uppercase border-b border-cyber-cyan pb-2 mb-3 text-cyber-cyan print-text-black">[PROJECTS]</h2>
+                            <div class="space-y-3">
+                                <div class="project-item cyber-border p-3 bg-cyber-bg/50 hover:bg-cyber-bg/70 transition-all">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+                                        <h3 class="font-bold neon-cyan print-text-black text-sm">./ai_manifold_interpreter.py</h3>
+                                        <button class="expand-project-btn touch-target text-xs bg-cyber-cyan text-black px-2 py-1 rounded hover:bg-cyber-cyan/80 no-print gemini-button font-bold" data-project="ai_manifold">[EXEC]</button>
+                                    </div>
+                                    <p class="text-xs short-desc text-cyber-text mt-1">Geometric latent-space interpretability framework for analyzing representational structure and concept trajectories in neural networks.</p>
+                                </div>
+
+                                <div class="project-item cyber-border p-3 bg-cyber-bg/50 hover:bg-cyber-bg/70 transition-all">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+                                        <h3 class="font-bold neon-cyan print-text-black text-sm">./attribution_graphs.py</h3>
+                                        <button class="expand-project-btn touch-target text-xs bg-cyber-cyan text-black px-2 py-1 rounded hover:bg-cyber-cyan/80 no-print gemini-button font-bold" data-project="attribution_graphs">[EXEC]</button>
+                                    </div>
+                                    <p class="text-xs short-desc text-cyber-text mt-1">Directed influence-path tracing for circuit-level model reasoning and mechanistic interpretability analysis.</p>
+                                </div>
+
+                                <div class="project-item cyber-border p-3 bg-cyber-bg/50 hover:bg-cyber-bg/70 transition-all">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+                                        <h3 class="font-bold neon-cyan print-text-black text-sm">./catnet_embedded_cv.py</h3>
+                                        <button class="expand-project-btn touch-target text-xs bg-cyber-cyan text-black px-2 py-1 rounded hover:bg-cyber-cyan/80 no-print gemini-button font-bold" data-project="catnet">[EXEC]</button>
+                                    </div>
+                                    <p class="text-xs short-desc text-cyber-text mt-1">Embedded UNet+CNN computer vision system with integrated interpretability layers for constrained hardware deployment.</p>
+                                </div>
+
+                                <div class="project-item cyber-border p-3 bg-cyber-bg/50 hover:bg-cyber-bg/70 transition-all">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+                                        <h3 class="font-bold neon-cyan print-text-black text-sm">./remy_wgan_gp_sandbox.py</h3>
+                                        <button class="expand-project-btn touch-target text-xs bg-cyber-cyan text-black px-2 py-1 rounded hover:bg-cyber-cyan/80 no-print gemini-button font-bold" data-project="remy_wgan">[EXEC]</button>
+                                    </div>
+                                    <p class="text-xs short-desc text-cyber-text mt-1">Generative-model interpretability sandbox with gradient/latent visualization hooks for WGAN-GP training analysis.</p>
+                                </div>
+
+                                <div class="project-item cyber-border p-3 bg-cyber-bg/50 hover:bg-cyber-bg/70 transition-all">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+                                        <h3 class="font-bold neon-cyan print-text-black text-sm">./fpga_mlp_accelerator.vhdl</h3>
+                                        <button class="expand-project-btn touch-target text-xs bg-cyber-cyan text-black px-2 py-1 rounded hover:bg-cyber-cyan/80 no-print gemini-button font-bold" data-project="fpga_mlp">[EXEC]</button>
+                                    </div>
+                                    <p class="text-xs short-desc text-cyber-text mt-1">VHDL hardware neural network emphasizing deterministic, inspectable activation flow for FPGA deployment.</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="lg:col-span-1 space-y-8">
+                        <section class="print-break-inside-avoid cyber-border p-3 bg-cyber-bg/50">
+                            <div class="terminal-prompt mb-3">
+                                <span class="neon-green">~$</span> <span class="neon-yellow">cat skills.json</span>
+                            </div>
+                            <h2 class="subtitle-responsive text-lg font-bold uppercase border-b border-cyber-cyan pb-2 mb-3 text-cyber-cyan print-text-black">[CORE_SKILLS]</h2>
+                            <div class="space-y-2">
+                                <div>
+                                    <h4 class="font-semibold neon-green text-sm">ml_cv:</h4>
+                                    <p class="text-xs text-cyber-text ml-3">["PyTorch", "TensorFlow", "JAX", "CNNs", "UNet", "Generative Models", "Sensor Fusion"]</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold neon-purple text-sm">interpretability:</h4>
+                                    <p class="text-xs text-cyber-text ml-3">["Attribution Graphs", "Activation Analysis", "Latent Geometry", "Circuit Reasoning", "Failure-Mode Analysis"]</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold neon-green text-sm">hardware_embedded:</h4>
+                                    <p class="text-xs text-cyber-text ml-3">["FPGA (VHDL/Verilog)", "Vivado", "Quartus", "Hardware NNs", "NVIDIA TX2/Jetson", "Fixed-Point Logic"]</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold neon-green text-sm">systems_tools:</h4>
+                                    <p class="text-xs text-cyber-text ml-3">["Python", "C++", "Linux", "Docker", "ONNX", "CAN Bus", "Reproducible Pipelines"]</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold neon-green text-sm">math_modeling:</h4>
+                                    <p class="text-xs text-cyber-text ml-3">["Optimization", "Bayesian Inference", "Stochastic Processes", "Signal Processing"]</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="print-break-inside-avoid cyber-border p-3 bg-cyber-bg/50">
+                            <div class="terminal-prompt mb-3">
+                                <span class="neon-green">~$</span> <span class="neon-yellow">cat education.log</span>
+                            </div>
+                            <h2 class="subtitle-responsive text-lg font-bold uppercase border-b border-cyber-cyan pb-2 mb-3 text-cyber-cyan print-text-black">[EDUCATION]</h2>
+                            <div class="space-y-3">
+                                <div>
+                                    <h3 class="font-bold neon-cyan print-text-black text-sm">Purdue University</h3>
+                                    <p class="text-xs text-cyber-text">M.S., Electrical & Computer Engineering</p>
+                                    <p class="text-xs text-cyber-text italic">Focus: ML, Neural Networks, Interpretability, Embedded Systems, VLSI-aware Deep Learning</p>
+                                    <p class="text-xs neon-orange mt-1">Graduated: December 2025</p>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold neon-cyan print-text-black text-sm">University of Michigan, Dearborn</h3>
+                                    <p class="text-xs text-cyber-text">B.S., Computer Engineering <span class="neon-purple">(With Distinction)</span></p>
+                                    <p class="text-xs text-cyber-text italic">Capstone: VHDL-based neural network accelerator</p>
+                                    <p class="text-xs neon-orange mt-1">Winter 2020</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="print-break-inside-avoid cyber-border p-3 bg-cyber-bg/50">
+                            <div class="terminal-prompt mb-3">
+                                <span class="neon-green">~$</span> <span class="neon-yellow">cat research_interests.txt</span>
+                            </div>
+                            <h2 class="subtitle-responsive text-lg font-bold uppercase border-b border-cyber-cyan pb-2 mb-3 text-cyber-cyan print-text-black">[RESEARCH_INTERESTS]</h2>
+                            <ul class="list-disc ml-5 text-xs text-cyber-text space-y-1">
+                                <li><span class="neon-purple">Interpretability</span> & Mechanistic Analysis</li>
+                                <li><span class="neon-purple">AI Safety</span> & Robustness</li>
+                                <li>Embedded ML & <span class="neon-cyan">Edge AI</span></li>
+                                <li>Multimodal Perception & Sensor Fusion</li>
+                                <li>HW–SW Co-Design & <span class="neon-green">FPGA Acceleration</span></li>
+                                <li>Representation Geometry & Latent Space Analysis</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+                <section id="cv-generator-section" class="print-break-inside-avoid no-print pt-6 border-t border-cyber-cyan/50 cyber-border p-4 bg-cyber-bg/50" style="display: none;">
+                    <div class="terminal-prompt mb-3">
+                        <span class="neon-green">~/ai$</span> <span class="neon-yellow">python generate_cover_letter.py --mode=interpretable</span>
+                    </div>
+                    <h2 class="subtitle-responsive text-lg font-bold uppercase border-b border-cyber-cyan pb-2 mb-3 text-cyber-cyan">[AI_COVER_LETTER_GENERATOR]</h2>
+                    <div>
+                        <label for="job-desc" class="block text-sm font-medium neon-cyan mb-2">INPUT COMPANY:</label>
+                        <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <textarea id="job-desc" rows="5" style="flex: 1; padding: 0.5rem; border: 1px solid rgba(0, 255, 204, 0.5); border-radius: 0.25rem; background: rgba(0, 20, 15, 0.5); color: var(--cyber-text); font-size: 0.75rem;" class="cyber-border focus:ring-cyber-cyan focus:border-cyber-cyan" placeholder="# Enter company name or paste details..."></textarea>
+                            <button id="generate-cover-letter" style="padding: 0.5rem 1rem; background: var(--cyber-cyan); color: black; border-radius: 0.25rem; font-weight: bold; white-space: nowrap; height: fit-content; margin-top: 0.25rem; min-width: 140px;" class="hover:bg-cyber-cyan/80 transition-all gemini-button touch-target">[GENERATE_CV]</button>
+                        </div>
+                        <div id="cover-letter-output-container" class="mt-3 hidden">
+                            <h3 class="font-bold neon-cyan">[OUTPUT]:</h3>
+                            <div id="cover-letter-output" class="mt-2 p-3 bg-cyber-bg/70 rounded border border-cyber-cyan/30 text-xs gemini-output text-cyber-text cyber-border"></div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="mt-8 pt-4 border-t border-cyber-cyan/30 text-center text-xs text-cyber-text/60 no-print">
+                <p>Last Updated: <span class="neon-green">2025-01-13</span> | Version: <span class="neon-cyan">3.0.0-interpretable</span></p>
+            </footer>
+        </div>
+    </div>
+
+    <div id="project-modal" class="fixed inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center z-50 hidden no-print p-4">
+        <div class="cyber-border bg-cyber-bg/90 rounded-lg max-w-2xl w-full max-h-[80vh] overflow-hidden">
+            <div class="p-4 border-b border-cyber-cyan/50 flex justify-between items-center">
+                <h3 id="modal-title" class="text-lg font-bold neon-cyan"></h3>
+                <button id="modal-close-btn" class="neon-pink hover:text-cyber-cyan text-2xl font-bold touch-target">&times;</button>
+            </div>
+            <div id="modal-body" class="p-4 max-h-[60vh] overflow-y-auto gemini-output text-cyber-text text-sm"></div>
+        </div>
+    </div>
+
+    <script>
+        function createMatrixRain() {
+            const container = document.getElementById('matrix-container');
+            if (!container) return;
+            const chars = '01ΛΨΦΘ∇∂∫';
+            const numColumns = Math.floor(window.innerWidth / 12);
+            container.innerHTML = '';
+            for (let i = 0; i < numColumns; i++) {
+                const char = document.createElement('div');
+                char.className = 'matrix-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = `${i * 12}px`;
+                char.style.animationDelay = `${Math.random() * 12}s`;
+                char.style.animationDuration = `${10 + Math.random() * 8}s`;
+                container.appendChild(char);
+            }
+        }
+
+        createMatrixRain();
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(createMatrixRain, 200);
+        });
+
+        // Check URL parameter for CV generator visibility
+        const urlParams = new URLSearchParams(window.location.search);
+        const showCV = urlParams.get('cv') === 'true';
+        if (showCV) {
+            const cvSection = document.getElementById('cv-generator-section');
+            if (cvSection) {
+                cvSection.style.display = 'block';
+            }
+        }
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        const setTheme = (isDark) => {
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+                document.body.classList.remove('light');
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.body.classList.add('light');
+                darkIcon.classList.add('hidden');
+                lightIcon.classList.remove('hidden');
+                localStorage.setItem('theme', 'light');
+            }
+        };
+
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            setTheme(true);
+        } else {
+            setTheme(false);
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.contains('dark');
+            setTheme(!isDark);
+        });
+
+        const showLoading = (button) => {
+            button.disabled = true;
+            button.innerHTML = `<div class="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin mx-auto"></div>`;
+        };
+
+        const hideLoading = (button, originalText) => {
+            button.disabled = false;
+            button.innerHTML = originalText;
+        };
+
+        async function mockCallGeminiAPI(prompt) {
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            if (prompt.includes("cover letter")) {
+                const resumeContent = document.getElementById('resume-content').innerText;
+                return `Dear Hiring Manager,
+
+I am writing to express my strong interest in joining your team. As an AI Systems Engineer completing my M.S. in Electrical & Computer Engineering at Purdue University, I specialize in building transparent, reliable machine learning systems optimized for safety-critical and resource-constrained environments.
+
+My experience spans defense-sector ML at Raytheon Technologies, where I developed interpretability tools for sensor-fusion models; safety-critical EV engineering at Ford, supporting ISO 26262 compliance; and autonomous vehicle perception research at the University of Michigan, deploying multimodal fusion pipelines on embedded hardware. Throughout these roles, I've focused on mechanistic interpretability—ensuring that AI systems are not only performant but also explainable and aligned with safety requirements.
+
+My technical foundation includes deep expertise in PyTorch, TensorFlow, and JAX for model development; FPGA-based hardware acceleration using VHDL/Verilog; and interpretability frameworks including attribution graphs, activation analysis, and latent-space geometry. Recent projects demonstrate this integration: AI Manifold for geometric latent-space analysis, CatNet combining embedded CV with interpretability layers, and a hardware MLP accelerator emphasizing inspectable activation flows.
+
+I am particularly drawn to organizations that value AI transparency, robustness, and real-world impact. I would welcome the opportunity to discuss how my background in interpretable, safety-conscious AI systems engineering can contribute to your team's mission.
+
+Thank you for your consideration.
+
+Sincerely,
+Roderick Lawrence Renwick`;
+            }
+
+            const projectDetails = {
+                "ai_manifold": `AI Manifold: Geometric Latent-Space Interpretability Framework
+
+Developed tools for understanding neural representations through differential geometry applied to latent spaces, treating learned features as manifolds. Built PyTorch/JAX pipelines for analyzing representation geometry, tracking concept evolution, and detecting failure modes. Focus on engineering interpretable ML systems that reveal what models learn beyond surface-level outputs.`,
+
+                "attribution_graphs": `Attribution Graphs: Circuit-Level Model Reasoning
+
+Engineered influence-path tracing system mapping information flow through neural architectures at circuit granularity. Developed algorithms for computing gradient-based attributions and discovering minimal sufficient subnetworks. Core focus on building tools that make neural network decision pathways transparent and debuggable for safety-critical deployments.`,
+
+                "catnet": `CatNet: Embedded Computer Vision with Integrated Interpretability
+
+Built real-time CV pipeline combining UNet segmentation and CNN classification, optimized for embedded deployment on resource-constrained hardware. Engineered custom kernels and pruning strategies to maintain interpretability overhead within real-time constraints. Demonstrates engineering approach to making CV systems both performant and explainable at edge.`,
+
+                "remy_wgan": `RemyWGAN-GP: Generative Model Interpretability Sandbox
+
+Developed WGAN-GP implementation with comprehensive instrumentation for analyzing adversarial training dynamics and latent geometry. Engineered visualization pipelines for tracking gradient flow, mode coverage, and generator-discriminator interactions. Focus on building tools that reveal generative model internals during training and inference.`,
+
+                "fpga_mlp": `FPGA MLP Accelerator: Hardware Neural Network Implementation
+
+Designed and implemented pipelined MLP accelerator in VHDL emphasizing transparent, deterministic inference with observable activations. Engineered fixed-point arithmetic and custom datapath optimized for ultra-low-latency deployment. Demonstrates hardware-software co-design approach to building interpretable, verifiable neural systems for safety-critical applications.`
+            };
+
+            const projectKey = prompt.split('data-project="')[1]?.split('"')[0];
+            return projectDetails[projectKey] || projectDetails["ai_manifold"];
+        }
+
+        const generateBtn = document.getElementById('generate-cover-letter');
+        const jobDescInput = document.getElementById('job-desc');
+        const outputContainer = document.getElementById('cover-letter-output-container');
+        const outputDiv = document.getElementById('cover-letter-output');
+
+        generateBtn.addEventListener('click', async () => {
+            // Password protection
+            const password = prompt("🔒 Enter password to generate cover letter:");
+            if (password !== "password") {
+                alert("❌ Incorrect password. Access denied.");
+                return;
+            }
+
+            const jobDescription = jobDescInput.value;
+            if (!jobDescription.trim()) {
+                alert("⚠️ Please provide company information.");
+                return;
+            }
+            const originalBtnText = generateBtn.innerHTML;
+            showLoading(generateBtn);
+            outputContainer.classList.remove('hidden');
+            outputDiv.innerHTML = '<span class="neon-green">[PROCESSING...]</span> Generating cover letter<span class="loading-dots"></span>';
+
+            const resumeText = document.getElementById('resume-content').innerText;
+            const prompt = `Write a professional, concise cover letter (3-4 paragraphs) based on this resume and job description. Emphasize interpretability, AI safety, and technical depth where relevant.\n\n--- RESUME ---\n${resumeText}\n\n--- JOB DESCRIPTION ---\n${jobDescription}`;
+
+            const coverLetter = await mockCallGeminiAPI(prompt);
+            outputDiv.textContent = coverLetter;
+            hideLoading(generateBtn, originalBtnText);
+        });
+
+        const modal = document.getElementById('project-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+
+        document.querySelectorAll('.expand-project-btn').forEach(button => {
+            button.addEventListener('click', async (e) => {
+                const projectItem = e.target.closest('.project-item');
+                const title = projectItem.querySelector('h3').textContent;
+                const projectKey = e.target.dataset.project;
+
+                modalTitle.textContent = `[${title.toUpperCase()}]`;
+                modalBody.innerHTML = `<div class="flex justify-center p-6"><div class="w-8 h-8 border-3 border-cyber-cyan border-t-transparent rounded-full animate-spin"></div></div>`;
+                modal.classList.remove('hidden');
+
+                const prompt = `data-project="${projectKey}"`;
+                const expandedDesc = await mockCallGeminiAPI(prompt);
+                modalBody.textContent = expandedDesc;
+            });
+        });
+
+        const closeModal = () => {
+            modal.classList.add('hidden');
+            modalBody.innerHTML = '';
+        };
+
+        modalCloseBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener('touchstart', function() {}, { passive: true });
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => {
+                console.log('%c[SYSTEM] Cyber Terminal v3.0.0 Initialized', 'color: #00ffcc; font-family: monospace;');
+                console.log('%c[MODE] Interpretable AI Systems', 'color: #bb33ff; font-family: monospace;');
+            });
+        }
+    </script>
+</body>
+</html>
