@@ -1,0 +1,132 @@
+/* Tailwind CSS - Base Layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  /* Root color variables */
+  :root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary: #10b981;
+    --accent: #f59e0b;
+    --background: #0f172a;
+    --surface: #1e293b;
+    --surface-light: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+  }
+
+  /* Typography improvements */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50;
+    font-feature-settings: "kern";
+  }
+
+  /* Heading styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    letter-spacing: -0.02em;
+  }
+
+  /* Link improvements */
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  a:focus-visible {
+    @apply outline-2 outline-offset-2 outline-blue-600;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  /* Button variants */
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-colors duration-200;
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-600 text-white hover:bg-gray-700;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+    @apply hover:shadow-lg transition-shadow duration-200;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-20;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold mb-12 text-center text-gray-900;
+  }
+
+  /* Accessibility improvements */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden;
+    @apply border-0 whitespace-nowrap clip;
+  }
+
+  /* Focus visible for keyboard navigation */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-2 outline-offset-2 outline-blue-600;
+  }
+}
+
+/* Utility extensions */
+@layer utilities {
+  /* Custom spacing */
+  .mt-2 {
+    @apply mt-2;
+  }
+
+  .ml-1 {
+    @apply ml-1;
+  }
+
+  /* Custom text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Print styles */
+  @media print {
+    body {
+      @apply bg-white;
+    }
+
+    a {
+      @apply underline;
+    }
+
+    a::after {
+      content: " (" attr(href) ")";
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
