@@ -38,7 +38,7 @@
       "degree": "M.S. Computer Engineering",
       "focus": "Deep Learning, Computer Vision, Edge AI",
       "status": "Graduated: December 2025",
-      "startDate": "2023",
+      "startDate": "2020",
       "endDate": "2025",
       "location": "West Lafayette, IN",
       "courses": [
@@ -53,7 +53,7 @@
       "degree": "B.S. Computer Engineering",
       "honors": "Distinction",
       "focus": "VLSI Design, Embedded Systems, Pattern Recognition",
-      "status": "Graduated: 2023",
+      "status": "Graduated: Winter 2020",
       "location": "Dearborn, MI",
       "courses": [
         "VLSI Design & Fabrication",
@@ -71,7 +71,7 @@
     {
       "company": "Raytheon Technologies",
       "position": "ML/Robotics Intelligence Intern",
-      "duration": "Summer 2024",
+      "duration": "Summer 2023",
       "description": "Developed structured light anomaly detection for metal defects in high-stakes aerospace environment",
       "achievements": [
         "Developed structured light anomaly detection for metal defects",
@@ -88,7 +88,7 @@
     {
       "company": "Ford Motor Company",
       "position": "Battery Architecture & Functional Safety Engineer",
-      "duration": "2024",
+      "duration": "Summer 2017",
       "description": "Automotive safety standards implementation and battery system architecture design",
       "achievements": [
         "ISO 26262 automotive safety standards implementation",
@@ -105,7 +105,7 @@
     {
       "company": "MDAS.AI / University of Michigan",
       "position": "Autonomous Vehicle Perception Engineer",
-      "duration": "2023-2024",
+      "duration": "Summer 2018 - Winter 2020",
       "description": "Sensory data processing pipeline development for autonomous shuttle project",
       "achievements": [
         "Built sensory data processing pipeline for autonomous shuttle",
@@ -379,13 +379,22 @@
     "aboutLong": "Emerging AI/ML engineer bridging hardware constraints with software innovation. Specialized in edge AI, computer vision, and embedded systems. Neurodivergent thinker leveraging pattern recognition and holistic systems understanding for cutting-edge research and practical implementation."
   },
   "metadata": {
-    "version": "2.1.0",
+    "version": "2.2.0",
     "lastUpdated": "December 2025",
-    "status": "Active",
+    "validationDate": "2025-11-30",
+    "status": "Active - Seeking PhD/Research positions",
     "resumeFormats": [
       "RLR-GitHub.github.io/2025resume.html",
       "rory.computer/public/resume.txt",
       "rory.engineer/__A1__HACKER_TERMINAL_RESUME.html"
-    ]
+    ],
+    "dateCorrections": [
+      "Raytheon: Summer 2024 → Summer 2023",
+      "UM-D Graduation: 2023 → Winter 2020",
+      "Ford: 2024 → Summer 2017",
+      "MDAS.ai: 2023-2024 → Summer 2018-Winter 2020",
+      "Purdue Start: 2023 → 2020 (Fall 2020)"
+    ],
+    "notes": "Graduate program 2020-2025 (5 years, methodical class-by-class approach). Summer 2023 gap year during Raytheon internship."
   }
 }
