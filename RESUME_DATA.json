@@ -1,0 +1,305 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2025-12-01",
+    "author": "Roderick Lawrence Renwick",
+    "formats": [
+      "html_static_rlr-github",
+      "ascii_terminal_rory_computer",
+      "cyberpunk_interactive_rory_engineer"
+    ]
+  },
+  "personal": {
+    "firstName": "Roderick",
+    "lastName": "Renwick",
+    "middleName": "Lawrence",
+    "preferredName": "Rory",
+    "title": "AI Systems Engineer",
+    "email": "RoderickLRenwick@gmail.com",
+    "phone": "(248) 914-0569",
+    "github": "https://github.com/RLR-GitHub",
+    "website": "https://www.r0ry.com",
+    "portfolio": "https://rodericklrenwick.com",
+    "location": "Bloomfield Hills, MI"
+  },
+  "summary": "AI Systems Engineer specializing in machine learning, computer vision, and mechanistic interpretability. Background includes defense ML at Raytheon, safety-critical EV engineering at Ford, and autonomous vehicle research. Focus on transparent, reliable systems for constrained hardware and safety environments.",
+  "education": [
+    {
+      "degree": "M.S. Electrical & Computer Engineering",
+      "institution": "Purdue University",
+      "location": "West Lafayette, IN",
+      "graduationDate": "2025-12",
+      "status": "Expected",
+      "focus": "ML, neural networks, interpretability, embedded systems, VLSI-aware deep learning",
+      "highlights": []
+    },
+    {
+      "degree": "B.S. Computer Engineering",
+      "institution": "University of Michigan–Dearborn",
+      "location": "Dearborn, MI",
+      "graduationDate": "2020-05",
+      "status": "Graduated",
+      "honors": "With Distinction",
+      "focus": "Digital Design, Computer Vision, Autonomous Systems, VLSI Design",
+      "capstone": "VHDL-based neural network accelerator"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Research Intern",
+      "company": "Raytheon Technologies",
+      "department": "AI Systems & Defense ML",
+      "location": "[Location]",
+      "startDate": "2023-06",
+      "endDate": "2023-08",
+      "description": "Developed structured-light/camera fusion models and interpretability tools for aerospace robotics.",
+      "responsibilities": [
+        "Developed structured-light/camera fusion models for aerospace robotics anomaly detection",
+        "Created activation tracing and interpretability tools for sensor fusion reasoning",
+        "Built reproducible diagnostics for safety-aligned ML prototyping"
+      ],
+      "skills": [
+        "Deep Learning",
+        "Computer Vision",
+        "TensorFlow",
+        "Sensor Fusion",
+        "Aerospace AI",
+        "Interpretability"
+      ]
+    },
+    {
+      "title": "Engineering Intern",
+      "company": "Ford Motor Company",
+      "department": "EV Controls & Safety",
+      "location": "[Location]",
+      "startDate": "2017-06",
+      "endDate": "2017-08",
+      "description": "Supported ISO 26262 functional safety for EV control systems and batteries.",
+      "responsibilities": [
+        "Supported ISO 26262 functional safety for EV control systems and batteries",
+        "Developed logic-tracing tools for embedded software safety verification",
+        "Contributed to system behavior reasoning and safety documentation"
+      ],
+      "skills": [
+        "ISO 26262",
+        "Battery Systems",
+        "Automotive Electronics",
+        "Functional Safety",
+        "Safety-Critical Systems"
+      ]
+    },
+    {
+      "title": "Research Assistant",
+      "company": "MDAS.ai / University of Michigan–Dearborn",
+      "department": "Autonomous Vehicle Research",
+      "location": "Dearborn, MI",
+      "startDate": "2018-01",
+      "endDate": "2020-05",
+      "description": "Built multimodal sensor fusion for autonomous shuttle perception on embedded hardware.",
+      "responsibilities": [
+        "Built CAN/IMU/CV multimodal fusion on NVIDIA TX2 for autonomous shuttle perception",
+        "Designed visualization tools for modality contribution inspection",
+        "Supported real-world AV data collection and edge deployment refinement"
+      ],
+      "skills": [
+        "CNNs",
+        "Autonomous Systems",
+        "Real-time Processing",
+        "Python",
+        "PyTorch",
+        "Sensor Fusion",
+        "Edge Deployment"
+      ]
+    }
+  ],
+  "skills": {
+    "ml_cv": [
+      "PyTorch",
+      "TensorFlow",
+      "JAX",
+      "CNNs",
+      "UNet",
+      "Generative models",
+      "Sensor fusion"
+    ],
+    "interpretability": [
+      "Attribution graphs",
+      "Activation analysis",
+      "Latent geometry",
+      "Circuit reasoning",
+      "Mechanistic interpretability"
+    ],
+    "hardware": [
+      "FPGA (VHDL/Verilog)",
+      "Vivado",
+      "Quartus",
+      "NVIDIA TX2/Jetson",
+      "Fixed-point logic"
+    ],
+    "systems": [
+      "Python",
+      "C++",
+      "Linux",
+      "Docker",
+      "ONNX",
+      "CAN Bus"
+    ],
+    "mathematics": [
+      "Optimization",
+      "Bayesian inference",
+      "Stochastic processes",
+      "Signal processing"
+    ],
+    "core_competencies": [
+      "Mechanistic interpretability",
+      "AI safety & robustness",
+      "Embedded/edge ML",
+      "Multimodal perception",
+      "Hardware-software co-design",
+      "Representation geometry"
+    ]
+  },
+  "projects": [
+    {
+      "name": "AI Manifold Interpreter",
+      "description": "Geometric latent-space analysis framework for neural representations.",
+      "details": "Tools for analyzing and visualizing high-dimensional learned representations in deep networks.",
+      "technologies": [
+        "PyTorch",
+        "JAX",
+        "Python",
+        "Interpretability"
+      ]
+    },
+    {
+      "name": "Attribution Graphs",
+      "description": "Directed influence-path tracing for circuit-level model reasoning.",
+      "details": "Framework for understanding computation flow in neural networks through activation attribution.",
+      "technologies": [
+        "PyTorch",
+        "Python",
+        "Graph Analysis",
+        "Mechanistic Interpretability"
+      ]
+    },
+    {
+      "name": "CatNet",
+      "description": "Embedded UNet+CNN with integrated interpretability layers.",
+      "details": "AI-powered cat identification system with embedded interpretability tools for edge deployment.",
+      "technologies": [
+        "PyTorch",
+        "UNet",
+        "Python",
+        "Embedded Systems",
+        "Interpretability"
+      ]
+    },
+    {
+      "name": "RemyWGAN-GP",
+      "description": "Generative model interpretability sandbox with visualization hooks.",
+      "details": "WGAN-GP implementation with built-in activation visualization for understanding generation process.",
+      "technologies": [
+        "TensorFlow",
+        "PyTorch",
+        "GANs",
+        "WGAN-GP",
+        "Python"
+      ]
+    },
+    {
+      "name": "FPGA MLP Accelerator",
+      "description": "VHDL hardware neural network with inspectable activation flow.",
+      "details": "Multi-layer perceptron implementation in VHDL with focus on combinational logic reduction and observable activations.",
+      "technologies": [
+        "VHDL",
+        "Digital Design",
+        "FPGA",
+        "Vivado"
+      ]
+    },
+    {
+      "name": "Multimodal AV Perception Stack",
+      "description": "CAN/IMU/CV fusion for autonomous vehicle real-time perception.",
+      "details": "Real-world autonomous shuttle perception system integrating multiple sensor modalities on NVIDIA TX2.",
+      "technologies": [
+        "PyTorch",
+        "Python",
+        "NVIDIA TX2",
+        "ROS",
+        "CAN Bus",
+        "Edge Deployment"
+      ]
+    }
+  ],
+  "certifications": [],
+  "publications": [],
+  "coursework": [
+    {
+      "category": "Deep Learning & Neural Networks",
+      "courses": [
+        "Deep Learning Fundamentals",
+        "Convolutional Neural Networks",
+        "Generative Models",
+        "Advanced Machine Learning"
+      ]
+    },
+    {
+      "category": "Signal & Image Processing",
+      "courses": [
+        "Digital Signal Processing",
+        "Image Processing & Analysis",
+        "Computer Vision",
+        "Real-time Signal Processing"
+      ]
+    },
+    {
+      "category": "Hardware & VLSI",
+      "courses": [
+        "VLSI Design",
+        "Digital Design",
+        "FPGA Implementation",
+        "Hardware-Software Co-design"
+      ]
+    },
+    {
+      "category": "Mathematics & Theory",
+      "courses": [
+        "Linear Algebra",
+        "Probability & Statistics",
+        "Optimization Theory",
+        "Advanced Calculus"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Commendation Letter",
+      "issuer": "Raytheon Technologies Research Center & Pratt & Whitney",
+      "date": "2023-08",
+      "description": "For exceptional research contributions in applied machine learning and computer vision"
+    },
+    {
+      "title": "Graduated with Distinction",
+      "issuer": "University of Michigan, Dearborn",
+      "date": "2020-05",
+      "description": "Bachelor of Science in Computer Engineering"
+    }
+  ],
+  "links": {
+    "portfolio_sites": {
+      "main": "https://www.r0ry.com",
+      "github_pages": "https://rlr-github.github.io",
+      "terminal": "https://rory.computer",
+      "career": "https://rory.engineer",
+      "education": "https://rory.software"
+    },
+    "social": {
+      "github": "https://github.com/RLR-GitHub"
+    },
+    "resume_formats": {
+      "static_html": "https://rlr-github.github.io/2025resume.html",
+      "ascii_terminal": "https://rory.computer/resume",
+      "cyberpunk_interactive": "https://rory.engineer/__A1__HACKER_TERMINAL_RESUME.html"
+    }
+  }
+}

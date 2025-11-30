@@ -17,7 +17,7 @@ Personal portfolio website showcasing my journey in machine learning, computer v
 
 ## 🎓 About Me
 
-I am a Master's student in Electrical & Computer Engineering at Purdue University (graduating 2025), specializing in:
+I am a Master's graduate in Electrical & Computer Engineering from Purdue University (December 2025), specializing in:
 
 - **Signal & Image Processing**
 - **Deep Learning & Neural Networks**
@@ -156,4 +156,4 @@ python -m http.server 8000
 
 Built with passion using Tailwind CSS, powered by innovation and a drive to advance the field of AI
 
-Last Updated: January 2025
+Last Updated: December 2025
