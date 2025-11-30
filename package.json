@@ -1,0 +1,52 @@
+{
+  "name": "rlr-github-portfolio",
+  "version": "2.0.0",
+  "description": "Professional portfolio website for Roderick L. Renwick - AI Systems Engineer",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "node scripts/build.js",
+    "validate": "node scripts/validate.js",
+    "test": "npm run validate",
+    "start": "npm run dev",
+    "precommit": "npm run validate"
+  },
+  "keywords": [
+    "portfolio",
+    "machine-learning",
+    "computer-vision",
+    "ai-systems",
+    "interpretability"
+  ],
+  "author": {
+    "name": "Roderick Lawrence Renwick",
+    "email": "RoderickLRenwick@gmail.com",
+    "url": "https://www.r0ry.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RLR-GitHub/RLR-GitHub.github.io.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "html-minifier": "^4.0.0",
+    "imagemin": "^8.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^11.0.0",
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0",
+    "cssnano": "^5.1.0"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ]
+}
