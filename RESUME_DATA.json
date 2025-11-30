@@ -1,0 +1,391 @@
+{
+  "personalInfo": {
+    "name": "Roderick L. Renwick",
+    "nickname": "Rory",
+    "title": "AI Systems Engineer",
+    "subtitle": "AI Engineer • Hardware Hacker • Edge Intelligence Architect",
+    "email": "contact@roryrenwick.dev",
+    "phone": "(248) 914-0569",
+    "location": "Bloomfield Hills, MI",
+    "github": "https://github.com/RLR-GitHub",
+    "portfolio": "https://rodericklrenwick.com",
+    "domains": [
+      {
+        "name": "r0ry.com",
+        "url": "https://r0ry.com",
+        "description": "Personal portfolio and project showcase"
+      },
+      {
+        "name": "rory.engineer",
+        "url": "https://rory.engineer",
+        "description": "AI/ML engineer portfolio - Recruitment page"
+      },
+      {
+        "name": "rory.software",
+        "url": "https://rory.software",
+        "description": "Software projects showcase"
+      },
+      {
+        "name": "rory.computer",
+        "url": "https://rory.computer",
+        "description": "Technical blog and research notes"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "Purdue University",
+      "degree": "M.S. Computer Engineering",
+      "focus": "Deep Learning, Computer Vision, Edge AI",
+      "status": "Graduated: December 2025",
+      "startDate": "2023",
+      "endDate": "2025",
+      "location": "West Lafayette, IN",
+      "courses": [
+        "Introduction to Neural Networks",
+        "Computer Vision on Embedded Systems",
+        "Boltzmann Law: Physics to Machine Learning",
+        "Advanced Signal Processing"
+      ]
+    },
+    {
+      "institution": "University of Michigan-Dearborn",
+      "degree": "B.S. Computer Engineering",
+      "honors": "Distinction",
+      "focus": "VLSI Design, Embedded Systems, Pattern Recognition",
+      "status": "Graduated: 2023",
+      "location": "Dearborn, MI",
+      "courses": [
+        "VLSI Design & Fabrication",
+        "Embedded Systems (ECE475)",
+        "Computer Architecture (ECE375)",
+        "Pattern Recognition (ECE270)"
+      ],
+      "mentors": [
+        "Dr. Paul Watta (ML/CV)",
+        "Dr. Adnan Shaout (Hardware)"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Raytheon Technologies",
+      "position": "ML/Robotics Intelligence Intern",
+      "duration": "Summer 2024",
+      "description": "Developed structured light anomaly detection for metal defects in high-stakes aerospace environment",
+      "achievements": [
+        "Developed structured light anomaly detection for metal defects",
+        "Rapid ML prototyping in high-stakes aerospace environment",
+        "Leadership commendation for rapid delivery"
+      ],
+      "technologies": [
+        "PyTorch",
+        "Computer Vision",
+        "Signal Processing",
+        "ML Prototyping"
+      ]
+    },
+    {
+      "company": "Ford Motor Company",
+      "position": "Battery Architecture & Functional Safety Engineer",
+      "duration": "2024",
+      "description": "Automotive safety standards implementation and battery system architecture design",
+      "achievements": [
+        "ISO 26262 automotive safety standards implementation",
+        "Battery system architecture design & validation",
+        "Contributed to next-gen EV safety systems"
+      ],
+      "technologies": [
+        "ISO 26262",
+        "Safety-Critical Systems",
+        "Battery Architecture",
+        "Automotive Systems"
+      ]
+    },
+    {
+      "company": "MDAS.AI / University of Michigan",
+      "position": "Autonomous Vehicle Perception Engineer",
+      "duration": "2023-2024",
+      "description": "Sensory data processing pipeline development for autonomous shuttle project",
+      "achievements": [
+        "Built sensory data processing pipeline for autonomous shuttle",
+        "Real-time computer vision on NVIDIA TX2 embedded platform",
+        "Edge AI optimization for resource-constrained environments"
+      ],
+      "technologies": [
+        "Embedded Systems",
+        "Computer Vision",
+        "Real-Time AI",
+        "NVIDIA TX2",
+        "OpenCV"
+      ]
+    }
+  ],
+  "skills": {
+    "languages": [
+      {
+        "name": "Python",
+        "proficiency": 95,
+        "category": "PRIMARY",
+        "description": "Deep learning, scientific computing, ML frameworks"
+      },
+      {
+        "name": "VHDL",
+        "proficiency": 80,
+        "category": "FPGA/HARDWARE",
+        "description": "FPGA design, digital logic, hardware acceleration"
+      },
+      {
+        "name": "Embedded C",
+        "proficiency": 85,
+        "category": "EDGE SYSTEMS",
+        "description": "Microcontroller programming, real-time systems"
+      },
+      {
+        "name": "C++",
+        "proficiency": 75,
+        "category": "PERFORMANCE",
+        "description": "Performance-critical code, system programming"
+      },
+      {
+        "name": "JavaScript/TypeScript",
+        "proficiency": 75,
+        "category": "FULL-STACK",
+        "description": "Web development, React, data visualization"
+      }
+    ],
+    "mlFrameworks": [
+      {
+        "name": "PyTorch",
+        "proficiency": 85,
+        "category": "DEEP LEARNING",
+        "description": "Neural networks, generative models, research"
+      },
+      {
+        "name": "TensorFlow",
+        "proficiency": 80,
+        "category": "PRODUCTION ML",
+        "description": "Production models, quantization, optimization"
+      },
+      {
+        "name": "OpenCV",
+        "proficiency": 85,
+        "category": "COMPUTER VISION",
+        "description": "Image processing, object detection, segmentation"
+      }
+    ],
+    "hardware": [
+      "FPGA Design (Xilinx)",
+      "VHDL @ Transistor Level",
+      "NVIDIA TX2",
+      "ISO 26262 Functional Safety",
+      "Edge Inference Optimization",
+      "Custom Silicon Design"
+    ],
+    "infrastructure": [
+      {
+        "name": "Docker",
+        "proficiency": 70
+      },
+      {
+        "name": "AWS",
+        "proficiency": 60
+      },
+      {
+        "name": "React",
+        "proficiency": 70
+      },
+      {
+        "name": "D3.js",
+        "proficiency": 65
+      }
+    ],
+    "specializations": [
+      "Generative Models (WGANs, Mode Collapse Prevention)",
+      "Computer Vision (Object Detection, Segmentation, Anomaly Detection)",
+      "Hardware-Software Co-Design",
+      "Edge AI & Real-Time Inference",
+      "Interpretable AI Systems",
+      "Model Interpretability & XAI"
+    ]
+  },
+  "projects": [
+    {
+      "id": "01",
+      "name": "RemyWGAN-GP",
+      "description": "Wasserstein GAN with Gradient Penalty for deepfake generation",
+      "focus": "Mode collapse prevention, training dynamics analysis",
+      "stack": [
+        "PyTorch",
+        "Python",
+        "Jupyter"
+      ],
+      "status": "Open-Source",
+      "url": "https://github.com/RLR-GitHub/RemyWGAN-GP"
+    },
+    {
+      "id": "02",
+      "name": "Hardware MLP from Scratch",
+      "description": "Neural network built from first principles in Python and extended to VHDL for FPGA hardware acceleration",
+      "focus": "Interpretable AI, Hardware Acceleration",
+      "stack": [
+        "Python",
+        "VHDL",
+        "FPGA"
+      ],
+      "status": "Research",
+      "url": "https://github.com/RLR-GitHub/hardware-mlp"
+    },
+    {
+      "id": "03",
+      "name": "CatNet (Smart Cat Door)",
+      "description": "AI-powered feline identification system with real-time segmentation and classification on edge device",
+      "focus": "Edge AI, Computer Vision",
+      "stack": [
+        "UNet",
+        "CNNs",
+        "OpenCV",
+        "Embedded C"
+      ],
+      "status": "Production",
+      "supervisor": "Dr. Adnan Shaout"
+    },
+    {
+      "id": "04",
+      "name": "ParkSmart Application",
+      "description": "Full-stack parking management system with CV vehicle detection",
+      "focus": "End-to-end solution, Computer Vision",
+      "stack": [
+        "OpenCV",
+        "React",
+        "JavaScript",
+        "iOS SDK"
+      ],
+      "status": "Production",
+      "url": "https://github.com/RLR-GitHub/ParkSmart"
+    },
+    {
+      "id": "05",
+      "name": "Autonomous Vehicle Sensory Pipeline",
+      "description": "Data processing pipeline for MDAS.ai autonomous shuttle project",
+      "focus": "Real-Time Processing, Embedded Systems",
+      "stack": [
+        "NVIDIA TX2",
+        "Embedded Systems",
+        "Real-Time Processing",
+        "OpenCV"
+      ],
+      "status": "Production",
+      "supervisor": "MDAS.ai"
+    },
+    {
+      "id": "06",
+      "name": "Structured Light Anomaly Detection",
+      "description": "ML-based metal defect detection for aerospace robotics",
+      "focus": "Defect Detection, Aerospace AI",
+      "stack": [
+        "PyTorch",
+        "Computer Vision",
+        "Signal Processing"
+      ],
+      "status": "Production",
+      "achievement": "Leadership commendation",
+      "supervisor": "Raytheon Technologies"
+    }
+  ],
+  "researchInterests": [
+    "Generative Model Stability & Mode Collapse Prevention",
+    "Hardware-Accelerated Inference (FPGA, Edge TPU, Custom Silicon)",
+    "Interpretable AI & First-Principles ML",
+    "Edge AI Optimization for Resource-Constrained Environments",
+    "Computer Vision for Autonomous Systems",
+    "Hardware-Software Co-Design for ML Acceleration",
+    "Neuromorphic Computing & Bio-Inspired AI"
+  ],
+  "coreValues": {
+    "philosophy1": {
+      "title": "Dyslexia is a feature, not a bug",
+      "description": "Neurodiversity as cognitive advantage: enhanced pattern recognition, spatial reasoning, and holistic systems thinking"
+    },
+    "philosophy2": {
+      "title": "Turn on, tune in, add Gaussian noise, and drop out",
+      "description": "Embrace experimentation. Inject randomness for regularization. Drop conventional paths to innovate."
+    },
+    "principles": [
+      "Bridge cutting-edge ML research with practical implementations",
+      "Prioritize interpretable and stable AI systems",
+      "Emphasize mathematical foundations alongside hardware realities",
+      "Build technology that enhances safety and efficiency",
+      "First-principles reasoning over cargo-cult engineering"
+    ]
+  },
+  "careerTrajectory": {
+    "seeking": [
+      "PhD opportunities",
+      "Research fellowships",
+      "Industry R&D roles in specialized areas"
+    ],
+    "specializations": [
+      "Hardware-Accelerated AI Inference",
+      "Edge AI & IoT Intelligence",
+      "Autonomous Systems Perception",
+      "Generative Model Research",
+      "Custom Silicon for ML (ASIC/FPGA)"
+    ],
+    "targetSectors": [
+      "Autonomous Vehicles",
+      "Aerospace",
+      "Robotics",
+      "Edge Computing",
+      "AI Research"
+    ],
+    "targetCompanies": [
+      "NVIDIA",
+      "Tesla",
+      "Google Research",
+      "OpenAI",
+      "Academic Labs",
+      "DARPA",
+      "MIT/Stanford Research Labs"
+    ],
+    "phases": [
+      {
+        "phase": "Phase 1: Hardware Foundations",
+        "description": "Undergraduate: VLSI, Embedded Systems, Computer Architecture"
+      },
+      {
+        "phase": "Phase 2: Professional Immersion",
+        "description": "Industry: Automotive Safety, Autonomous Systems, Aerospace Robotics"
+      },
+      {
+        "phase": "Phase 3: Graduate Refinement",
+        "description": "Current: Deep Learning, Edge AI, Generative Models, Interpretable ML"
+      },
+      {
+        "phase": "Future: Hardware-Accelerated Intelligence",
+        "description": "Target: Custom silicon for ML, neuromorphic computing, AGI hardware"
+      }
+    ]
+  },
+  "collaboration": {
+    "protocols": "Open to partnerships in ML/CV, Hardware AI, Edge Systems",
+    "availability": "Open for research collaborations, consulting, speaking engagements",
+    "clearance": "Aerospace industry experience (Raytheon)",
+    "uniqueValue": "Comprehensive understanding from silicon to neural networks",
+    "tagline": "From transistors to transformers, from FPGA to frontier models"
+  },
+  "summary": {
+    "aboutShort": "AI Systems Engineer and Hardware-Software Co-Design specialist. Master's graduate from Purdue University with industry experience at Raytheon, Ford, and MDAS.ai. Specialized in edge AI, computer vision, and interpretable machine learning.",
+    "aboutLong": "Emerging AI/ML engineer bridging hardware constraints with software innovation. Specialized in edge AI, computer vision, and embedded systems. Neurodivergent thinker leveraging pattern recognition and holistic systems understanding for cutting-edge research and practical implementation."
+  },
+  "metadata": {
+    "version": "2.1.0",
+    "lastUpdated": "December 2025",
+    "status": "Active",
+    "resumeFormats": [
+      "RLR-GitHub.github.io/2025resume.html",
+      "rory.computer/public/resume.txt",
+      "rory.engineer/__A1__HACKER_TERMINAL_RESUME.html"
+    ]
+  }
+}
