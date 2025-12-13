@@ -988,10 +988,18 @@
                         I'm always interested in hearing about new opportunities in machine learning, computer vision, and AI research. Feel free to reach out if you'd like to collaborate or discuss potential projects.
                     </p>
                     <div class="space-y-4">
-                        <a href="mailto:RoderickLRenwick@gmail.com" class="flex items-center text-gray-600 hover:text-blue-600">
+                        <a id="resume-email" href="mailto:RoderickLRenwick@gmail.com" class="flex items-center text-gray-600 hover:text-blue-600">
                             <i class="fas fa-envelope mr-3"></i>
-                            RoderickLRenwick@gmail.com
+                            <span id="resume-email-text">RoderickLRenwick@gmail.com</span>
                         </a>
+                        <p id="resume-phone" class="flex items-center text-gray-600">
+                            <i class="fas fa-phone mr-3"></i>
+                            (248) 914-0569
+                        </p>
+                        <p id="resume-location" class="flex items-center text-gray-600">
+                            <i class="fas fa-map-marker-alt mr-3"></i>
+                            Bloomfield Hills, MI
+                        </p>
                         <a href="https://github.com/RLR-GitHub" class="flex items-center text-gray-600 hover:text-blue-600">
                             <i class="fab fa-github mr-3"></i>
                             RLR-GitHub
@@ -1028,7 +1036,7 @@
                 <p class="text-sm text-gray-400">© 2025 Roderick L. Renwick. All rights reserved.</p>
                 <div class="mt-2 space-y-1">
                     <p class="text-sm text-gray-400">www.r0ry.com</p>
-                    <p class="text-sm text-gray-400">RoderickLRenwick@gmail.com</p>
+                    <p id="resume-email-footer" class="text-sm text-gray-400">RoderickLRenwick@gmail.com</p>
                 </div>
                 <p class="mt-4 text-sm text-gray-400">Built with: Tailwind CSS • Anthropic's Claude • Cursor IDE</p>
             </div>
@@ -1036,15 +1044,61 @@
     </footer>
 
     <script>
+        // Smart Hybrid: Load master resume data from rodericklrenwick.com
+        async function loadMasterResumeData() {
+            const MASTER_JSON_URL = 'https://rodericklrenwick.com/resume-data.json';
+
+            try {
+                const response = await fetch(MASTER_JSON_URL);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                console.log('[RESUME] Loaded master data v' + data.meta.version);
+
+                // Update contact info dynamically
+                const emailTextEl = document.getElementById('resume-email-text');
+                const emailLinkEl = document.getElementById('resume-email');
+                const emailFooterEl = document.getElementById('resume-email-footer');
+                const phoneEl = document.getElementById('resume-phone');
+                const locationEl = document.getElementById('resume-location');
+
+                if (emailTextEl && data.contact?.email) {
+                    emailTextEl.textContent = data.contact.email;
+                }
+                if (emailLinkEl && data.contact?.email) {
+                    emailLinkEl.href = 'mailto:' + data.contact.email;
+                }
+                if (emailFooterEl && data.contact?.email) {
+                    emailFooterEl.textContent = data.contact.email;
+                }
+                if (phoneEl && data.contact?.phone) {
+                    phoneEl.innerHTML = '<i class="fas fa-phone mr-3"></i>' + data.contact.phone;
+                }
+                if (locationEl && data.personal?.location) {
+                    locationEl.innerHTML = '<i class="fas fa-map-marker-alt mr-3"></i>' + data.personal.location;
+                }
+
+                console.log('[RESUME] ✓ Contact info synced from master JSON');
+            } catch (error) {
+                console.warn('[RESUME] ⚠ Could not load master JSON, using hardcoded fallback:', error.message);
+                // Fallback values already in HTML, no action needed
+            }
+        }
+
         // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
+            // Load master resume data on page load
+            loadMasterResumeData();
+
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            
+
             mobileMenuButton.addEventListener('click', function() {
                 mobileMenu.classList.toggle('hidden');
             });
-            
+
             // Close mobile menu when clicking on a link
             const mobileMenuLinks = mobileMenu.querySelectorAll('a');
             mobileMenuLinks.forEach(link => {
