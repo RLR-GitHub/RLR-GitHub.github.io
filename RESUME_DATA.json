@@ -379,10 +379,15 @@
     "aboutLong": "Emerging AI/ML engineer bridging hardware constraints with software innovation. Specialized in edge AI, computer vision, and embedded systems. Neurodivergent thinker leveraging pattern recognition and holistic systems understanding for cutting-edge research and practical implementation."
   },
   "metadata": {
-    "version": "2.2.0",
+    "version": "2.3.0",
     "lastUpdated": "December 2025",
-    "validationDate": "2025-11-30",
+    "validationDate": "2025-12-13",
     "status": "Active - Seeking PhD/Research positions",
+    "unifiedSource": {
+      "api": "https://rodericklrenwick.com/api/v2/unified-projects.json",
+      "description": "Canonical project database for RLR ecosystem",
+      "visibilityFilter": "visibility.resume"
+    },
     "resumeFormats": [
       "RLR-GitHub.github.io/2025resume.html",
       "rory.computer/public/resume.txt",
