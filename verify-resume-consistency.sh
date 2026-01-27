@@ -86,7 +86,7 @@ check_url_status "https://rory.engineer/__A1__HACKER_TERMINAL_RESUME.html" \
 check_url_status "https://rodericklrenwick.com/__RLR_RESUME2025-v3.html" \
     "Resume Mirror (rodericklrenwick.com)"
 
-check_url_status "https://rlr-github.github.io/2025resume.html" \
+check_url_status "https://rlr-github.github.io/2026resume.html" \
     "Resume Mirror (rlr-github.github.io)"
 
 check_url_status "https://rory.computer" \
@@ -101,15 +101,15 @@ echo -e "${YELLOW}2. Graduation Status Verification${NC}"
 echo -e "${YELLOW}═══════════════════════════════════════════════════════════${NC}"
 
 check_content "https://rory.engineer/__A1__HACKER_TERMINAL_RESUME.html" \
-    "Graduated: December 2025" \
+    "February 2026" \
     "Purdue graduation (rory.engineer)"
 
 check_content "https://rodericklrenwick.com/__RLR_RESUME2025-v3.html" \
-    "Graduated: December 2025" \
+    "February 2026" \
     "Purdue graduation (rodericklrenwick.com)"
 
 check_content "https://github.com/RLR-GitHub" \
-    "Graduated: December 2025" \
+    "February 2026" \
     "Purdue graduation (GitHub profile)"
 
 echo ""
