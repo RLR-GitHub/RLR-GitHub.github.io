@@ -3,10 +3,12 @@
 ################################################################################
 # Resume Format Synchronization Script
 #
-# Synchronizes resume data from RESUME_DATA.json to all resume formats:
+# Synchronizes resume data from unified-resume.json v3 API to all resume formats:
+# Source: /Users/rory/GHProjects/rodericklrenwick.com/public/api/v3/unified-resume.json
+#
 # - ASCII Terminal Format (rory.computer/public/resume.txt)
 # - Cyberpunk HTML Format (rory.engineer/__A1__HACKER_TERMINAL_RESUME.html)
-# - Static HTML Format (RLR-GitHub.github.io/2025resume.html)
+# - Static HTML Format (RLR-GitHub.github.io/2026resume.html)
 #
 # Usage:
 #   ./sync-resume-formats.sh [--dry-run] [--validate-only]
@@ -220,7 +222,7 @@ update_cyberpunk_resume() {
 ################################################################################
 
 update_static_resume() {
-  local target_file="$SCRIPT_DIR/2025resume.html"
+  local target_file="$SCRIPT_DIR/2026resume.html"
   local backup_file="${target_file}.backup.$(date +%s)"
 
   print_header "Updating Static HTML Resume"
@@ -410,7 +412,7 @@ RESUME FORMATS SYNCHRONIZED:
      Type: Interactive HTML with neon effects
 
   3. Static HTML Format
-     Location: RLR-GitHub.github.io/2025resume.html
+     Location: RLR-GitHub.github.io/2026resume.html
      Type: Responsive HTML with modern styling
 
 EXAMPLE USAGE:
